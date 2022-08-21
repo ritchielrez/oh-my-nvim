@@ -55,6 +55,7 @@ cmp.setup({
 		{ name = 'luasnip' },
 		{ name = 'nvim_lsp' },
         { name = 'nvim_lua' },
+        { name = 'nvim_lsp_signature_help' },
 	}),
 	experimental = {
 		ghost_text = true,

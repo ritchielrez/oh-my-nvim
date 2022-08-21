@@ -99,6 +99,14 @@ _G.packer_plugins = {
     path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp-signature-help\\after\\plugin\\cmp_nvim_lsp_signature_help.lua" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-nvim-lua"] = {
     after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lua\\after\\plugin\\cmp_nvim_lua.lua" },
     load_after = {},
@@ -202,6 +210,14 @@ try_loadstring("\27LJ\2\nq\0\0\5\0\5\0\n6\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X
 time([[Config for impatient.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-cmp ]]
+vim.cmd [[ packadd cmp-nvim-lua ]]
+vim.cmd [[ packadd LuaSnip ]]
+vim.cmd [[ packadd cmp_luasnip ]]
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-nvim-lsp-signature-help ]]
+vim.cmd [[ packadd cmp-nvim-lsp ]]
 vim.cmd [[ packadd mason.nvim ]]
 vim.cmd [[ packadd mason-lspconfig.nvim ]]
 
@@ -211,13 +227,6 @@ try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\flsp.lsp\
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd catppuccin ]]
 vim.cmd [[ packadd tokyodark.nvim ]]
-vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd LuaSnip ]]
-vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd cmp-nvim-lua ]]
-vim.cmd [[ packadd cmp_luasnip ]]
-vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-nvim-lsp ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
