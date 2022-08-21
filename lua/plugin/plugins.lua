@@ -67,13 +67,31 @@ return packer.startup(function(use)
 	use({ 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' })
 	use({ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' })
 	use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
-    use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
-    use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
+	use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
+	use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
 
 	use({ 'L3MON4D3/LuaSnip', after = 'nvim-cmp' })
 	use({ 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' })
 
 	use('jose-elias-alvarez/null-ls.nvim')
+
+	use({
+		'akinsho/toggleterm.nvim',
+		tag = 'v2.*',
+		cmd = { 'ToggleTerm' },
+		config = function()
+			local toggleterm_status_ok, toggleterm = pcall(require, 'toggleterm')
+			if not toggleterm_status_ok then
+				return
+			end
+
+			toggleterm.setup({
+				open_mapping = [[<c-\>]],
+                insert_mappings = true,
+                terminal_mappings = true,
+			})
+		end,
+	})
 
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()

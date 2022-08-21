@@ -194,6 +194,15 @@ _G.packer_plugins = {
     path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    commands = { "ToggleTerm" },
+    config = { "\27LJ\2\nå\1\0\0\5\0\5\0\v6\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X\2\1ÄK\0\1\0009\2\3\0015\4\4\0B\2\2\1K\0\1\0\1\0\3\17open_mapping\n<c-\\>\22terminal_mappings\2\20insert_mappings\2\nsetup\15toggleterm\frequire\npcall\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["tokyodark.nvim"] = {
     load_after = {},
     loaded = true,
@@ -210,27 +219,28 @@ try_loadstring("\27LJ\2\nq\0\0\5\0\5\0\n6\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X
 time([[Config for impatient.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd catppuccin ]]
+vim.cmd [[ packadd tokyodark.nvim ]]
 vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd cmp-nvim-lua ]]
-vim.cmd [[ packadd LuaSnip ]]
-vim.cmd [[ packadd cmp_luasnip ]]
-vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-nvim-lsp-signature-help ]]
+vim.cmd [[ packadd cmp_luasnip ]]
+vim.cmd [[ packadd LuaSnip ]]
 vim.cmd [[ packadd cmp-nvim-lsp ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd mason.nvim ]]
 vim.cmd [[ packadd mason-lspconfig.nvim ]]
 
 -- Config for: mason-lspconfig.nvim
 try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\flsp.lsp\frequire\0", "config", "mason-lspconfig.nvim")
 
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd catppuccin ]]
-vim.cmd [[ packadd tokyodark.nvim ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ToggleTerm lua require("packer.load")({'toggleterm.nvim'}, { cmd = "ToggleTerm", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 

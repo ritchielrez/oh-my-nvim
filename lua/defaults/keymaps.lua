@@ -34,6 +34,5 @@ map('n', '<Leader>lx', ':LspStop<CR>', opts)
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 map('n', '<Leader>lf', ':Format<CR>', opts)
 
--- Terminal keymaps
-map('t', '<Esc>', '<C-\\><C-n>', {})
-map('n', '<C-\\>', ':term<CR>', {})
+-- Toggleterm keymaps
+map('n', '<C-\\>', ':ToggleTerm<CR>', opts)

@@ -21,6 +21,8 @@ set.numberwidth = 4
 set.backup = false
 set.writebackup = false
 
+set.hidden = true
+
 set.updatetime = 300
 
 set.laststatus = 3
