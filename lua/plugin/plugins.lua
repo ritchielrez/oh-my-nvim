@@ -41,6 +41,7 @@ return packer.startup(function(use)
 
 	use({ 'tiagovla/tokyodark.nvim', after = 'nvim-treesitter' })
 	use({ 'catppuccin/nvim', as = 'catppuccin', after = 'nvim-treesitter' })
+    use({ 'sainnhe/gruvbox-material', after = 'nvim-treesitter' })
 
 	-- Fuzzy text searcher
 	use({
@@ -86,7 +87,7 @@ return packer.startup(function(use)
 			end
 
 			toggleterm.setup({
-				open_mapping = [[<c-\>]],
+				open_mapping = [[<C-\>]],
                 insert_mappings = true,
                 terminal_mappings = true,
 			})

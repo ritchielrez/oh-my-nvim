@@ -2,6 +2,8 @@
 vim.g.tokyodark_enable_italic = false
 vim.g.tokyodark_enable_italic_comment = false
 
+vim.g.gruvbox_material_transparent_background = 1
+
 vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
 
 local catppuccin_status_ok, catppuccin = pcall(require, 'catppuccin')
@@ -103,9 +105,12 @@ catppuccin.setup({
 	highlight_overrides = {},
 })
 -- Sets the colorscheme
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme gruvbox-material]])
 
-vim.cmd([[highlight TelescopeSelection guibg=none]])
+vim.cmd([[
+highlight TelescopeSelection guibg=none
+highlight link TelescopeSelectionCaret Orange
+]])
 
 -- Treesitter: syntax parser
 local treesitter_ok, configs = pcall(require, 'nvim-treesitter.configs')

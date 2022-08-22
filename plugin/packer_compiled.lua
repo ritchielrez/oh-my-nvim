@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "C:\\Users\\ritch\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\ritch\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\ritch\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\ritch\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
-local install_cpath_pattern = "C:\\Users\\ritch\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
+local package_path_str = "C:\\Users\\strange.ritchiel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\strange.ritchiel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\strange.ritchiel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\strange.ritchiel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\strange.ritchiel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -73,117 +73,124 @@ _G.packer_plugins = {
     load_after = {},
     loaded = true,
     needs_bufread = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip.git"
   },
   catppuccin = {
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\catppuccin",
-    url = "https://github.com/catppuccin/nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\catppuccin",
+    url = "https://github.com/catppuccin/nvim.git"
   },
   ["cmp-buffer"] = {
-    after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-buffer\\after\\plugin\\cmp_buffer.lua" },
+    after_files = { "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-buffer\\after\\plugin\\cmp_buffer.lua" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer.git"
   },
   ["cmp-nvim-lsp"] = {
-    after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp\\after\\plugin\\cmp_nvim_lsp.lua" },
+    after_files = { "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp\\after\\plugin\\cmp_nvim_lsp.lua" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp.git"
   },
   ["cmp-nvim-lsp-signature-help"] = {
-    after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp-signature-help\\after\\plugin\\cmp_nvim_lsp_signature_help.lua" },
+    after_files = { "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp-signature-help\\after\\plugin\\cmp_nvim_lsp_signature_help.lua" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp-signature-help",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git"
   },
   ["cmp-nvim-lua"] = {
-    after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lua\\after\\plugin\\cmp_nvim_lua.lua" },
+    after_files = { "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lua\\after\\plugin\\cmp_nvim_lua.lua" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lua",
-    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua.git"
   },
   ["cmp-path"] = {
-    after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-path\\after\\plugin\\cmp_path.lua" },
+    after_files = { "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-path\\after\\plugin\\cmp_path.lua" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path.git"
   },
   cmp_luasnip = {
-    after_files = { "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp_luasnip\\after\\plugin\\cmp_luasnip.lua" },
+    after_files = { "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp_luasnip\\after\\plugin\\cmp_luasnip.lua" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip.git"
   },
   ["fidget.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fidget.nvim",
-    url = "https://github.com/j-hui/fidget.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim.git"
+  },
+  ["gruvbox-material"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material.git"
   },
   ["impatient.nvim"] = {
     config = { "\27LJ\2\nq\0\0\5\0\5\0\n6\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X\2\3Ä6\2\3\0'\4\4\0B\2\2\1K\0\1\0(Impatient.nvim plugin not installed\nprint\14impatient\frequire\npcall\0" },
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim.git"
   },
   ["mason-lspconfig.nvim"] = {
     config = { "\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\flsp.lsp\frequire\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim.git"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim.git"
   },
   ["null-ls.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim.git"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp.git"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig.git"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter.git"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
-    url = "https://github.com/wbthomason/packer.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim.git"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim.git"
   },
   ["telescope.nvim"] = {
     commands = { "Telescope" },
@@ -191,24 +198,24 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim.git"
   },
   ["toggleterm.nvim"] = {
     commands = { "ToggleTerm" },
-    config = { "\27LJ\2\nå\1\0\0\5\0\5\0\v6\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X\2\1ÄK\0\1\0009\2\3\0015\4\4\0B\2\2\1K\0\1\0\1\0\3\17open_mapping\n<c-\\>\22terminal_mappings\2\20insert_mappings\2\nsetup\15toggleterm\frequire\npcall\0" },
+    config = { "\27LJ\2\nå\1\0\0\5\0\5\0\v6\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X\2\1ÄK\0\1\0009\2\3\0015\4\4\0B\2\2\1K\0\1\0\1\0\3\22terminal_mappings\2\20insert_mappings\2\17open_mapping\n<C-\\>\nsetup\15toggleterm\frequire\npcall\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim.git"
   },
   ["tokyodark.nvim"] = {
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "C:\\Users\\ritch\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\tokyodark.nvim",
-    url = "https://github.com/tiagovla/tokyodark.nvim"
+    path = "C:\\Users\\strange.ritchiel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\tokyodark.nvim",
+    url = "https://github.com/tiagovla/tokyodark.nvim.git"
   }
 }
 
@@ -220,16 +227,17 @@ time([[Config for impatient.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd catppuccin ]]
 vim.cmd [[ packadd tokyodark.nvim ]]
+vim.cmd [[ packadd catppuccin ]]
+vim.cmd [[ packadd gruvbox-material ]]
 vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd cmp-nvim-lua ]]
+vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp-nvim-lsp-signature-help ]]
-vim.cmd [[ packadd cmp_luasnip ]]
 vim.cmd [[ packadd LuaSnip ]]
+vim.cmd [[ packadd cmp_luasnip ]]
 vim.cmd [[ packadd cmp-nvim-lsp ]]
 vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-nvim-lua ]]
 vim.cmd [[ packadd mason.nvim ]]
 vim.cmd [[ packadd mason-lspconfig.nvim ]]
 
