@@ -118,6 +118,10 @@ end
 local function on_attach(client, bufnr)
 	lsp_diagnostics()
 	lsp_keymaps(bufnr)
+
+	if client.name == 'sumneko_lua' then
+		client.resolved_capabilities.document_formatting = false
+	end
 end
 
 for _, server in pairs(servers) do
@@ -131,8 +135,8 @@ for _, server in pairs(servers) do
 
 	if server == 'sumneko_lua' then
 		lspconfig.sumneko_lua.setup({
-            autostart = opts.autostart,
-            on_attach = opts.on_attach,
+			autostart = opts.autostart,
+			on_attach = opts.on_attach,
 			settings = {
 				Lua = {
 					runtime = {
@@ -143,10 +147,6 @@ for _, server in pairs(servers) do
 						-- Get the language server to recognize the `vim` global
 						globals = { 'vim' },
 					},
-					-- Disable default lsp formatting
-					format = {
-						enable = false,
-					},
 					-- Do not send telemetry data containing a randomized but unique identifier
 					telemetry = {
 						enable = false,
@@ -154,9 +154,9 @@ for _, server in pairs(servers) do
 				},
 			},
 		})
-        goto continue
+		goto continue
 	end
 
 	lspconfig[server].setup(opts)
-    ::continue::
+	::continue::
 end
