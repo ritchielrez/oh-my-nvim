@@ -122,6 +122,10 @@ local function on_attach(client, bufnr)
 	if client.name == 'sumneko_lua' then
 		client.resolved_capabilities.document_formatting = false
 	end
+
+	if client.name == 'gopls' then
+		client.resolved_capabilities.document_formatting = false
+	end
 end
 
 for _, server in pairs(servers) do
