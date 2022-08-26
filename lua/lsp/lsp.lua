@@ -22,9 +22,9 @@ local servers = {
 mason.setup({
 	ui = {
 		icons = {
-			package_installed = require('plugin.icons').ui.Check,
-			package_pending = require('plugin.icons').ui.ChevronRight,
-			package_uninstalled = require('plugin.icons').ui.Close,
+			package_installed = require('defaults.icons').ui.Check,
+			package_pending = require('defaults.icons').ui.ChevronRight,
+			package_uninstalled = require('defaults.icons').ui.Close,
 		},
 	},
 })
@@ -37,7 +37,7 @@ mason_lspconfig.setup({
 local opts = {}
 
 local function lsp_diagnostics()
-	local icons = require('plugin.icons')
+	local icons = require('defaults.icons')
 
 	local signs = {
 		{ name = 'DiagnosticSignError', text = icons.diagnostics.Error },

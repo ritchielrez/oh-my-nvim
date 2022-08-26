@@ -8,7 +8,7 @@ local actions = require('telescope.actions')
 telescope.setup({
 	defaults = {
 
-		prompt_prefix = ' ',
+		prompt_prefix = require('defaults.icons').ui.Search .. ' ',
 		sorting_strategy = 'ascending',
 		selection_caret = ' ',
 		path_display = { 'truncate' },

@@ -10,7 +10,7 @@ vim.cmd([[highlight link FidgetTask Fg]])
 fidget.setup({
 	text = {
 		spinner = 'dots', -- animation shown when tasks are ongoing
-		done = require('plugin.icons').ui.Check, -- character shown when all tasks are complete
+		done = require('defaults.icons').ui.Check, -- character shown when all tasks are complete
 		commenced = 'Started', -- message shown when task starts
 		completed = 'Completed', -- message shown when task completes
 	},

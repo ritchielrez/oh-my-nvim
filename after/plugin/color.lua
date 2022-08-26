@@ -2,6 +2,8 @@
 vim.g.tokyodark_enable_italic = false
 vim.g.tokyodark_enable_italic_comment = false
 
+vim.g.gruvbox_material_transparent_background = 2
+
 vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
 
 local catppuccin_status_ok, catppuccin = pcall(require, 'catppuccin')
