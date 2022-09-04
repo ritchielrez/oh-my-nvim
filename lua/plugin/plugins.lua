@@ -41,11 +41,11 @@ return packer.startup(function(use)
 
 	use({ 'tiagovla/tokyodark.nvim', after = 'nvim-treesitter' })
 	use({ 'catppuccin/nvim', as = 'catppuccin', after = 'nvim-treesitter' })
+	use({ 'sainnhe/gruvbox-material', after = 'nvim-treesitter' })
 
 	-- Fuzzy text searcher
 	use({
 		'nvim-telescope/telescope.nvim',
-		opt = true,
 		cmd = { 'Telescope' },
 		config = function()
 			require('plugin.telescope')
@@ -75,23 +75,8 @@ return packer.startup(function(use)
 
 	use('jose-elias-alvarez/null-ls.nvim')
 
-	use({
-		'akinsho/toggleterm.nvim',
-		tag = 'v2.*',
-		cmd = { 'ToggleTerm' },
-		config = function()
-			local toggleterm_status_ok, toggleterm = pcall(require, 'toggleterm')
-			if not toggleterm_status_ok then
-				return
-			end
-
-			toggleterm.setup({
-				open_mapping = [[<C-\>]],
-				insert_mappings = true,
-				terminal_mappings = true,
-			})
-		end,
-	})
+	-- Integrated terminal
+	use({ 'voldikss/vim-floaterm', cmd = { 'FloatermToggle' } })
 
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()

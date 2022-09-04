@@ -34,5 +34,5 @@ map('n', '<Leader>lx', ':LspStop<CR>', opts)
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 map('n', '<Leader>lf', ':Format<CR>', opts)
 
--- Toggleterm keymaps
-map('n', '<C-\\>', ':ToggleTerm<CR>', opts)
+-- Floaterm keymaps
+map('n', '<C-\\>', ':FloatermToggle<CR>', opts)
