@@ -120,11 +120,11 @@ local function on_attach(client, bufnr)
 	lsp_keymaps(bufnr)
 
 	if client.name == 'sumneko_lua' then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 
 	if client.name == 'gopls' then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 end
 
