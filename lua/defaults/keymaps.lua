@@ -9,6 +9,9 @@ map('n', '<C-j>', '<C-w>j', opts)
 map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-l>', '<C-w>l', opts)
 
+-- Don't want to freeze neovim
+map('n', 'K', '<nop>', opts)
+
 -- Don't want to get inside of ex mode
 map('n', 'Q', '<nop>', opts)
 
