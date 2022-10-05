@@ -78,6 +78,17 @@ return packer.startup(function(use)
 	-- Integrated terminal
 	use({ 'voldikss/vim-floaterm', cmd = { 'FloatermToggle' } })
 
+	-- Debugging
+	use('mfussenegger/nvim-dap')
+	use({
+		'rcarriga/nvim-dap-ui',
+		after = 'nvim-dap',
+	})
+	use({
+		'leoluz/nvim-dap-go',
+		ft = 'go',
+	})
+
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
 	end
