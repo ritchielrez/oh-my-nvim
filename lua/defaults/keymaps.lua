@@ -31,7 +31,7 @@ map('n', '<Leader>fo', ':Telescope oldfiles<CR>', opts)
 map('n', '<Leader>ls', ':LspStart<CR>', opts)
 map('n', '<Leader>lx', ':LspStop<CR>', opts)
 
-vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]])
 map('n', '<Leader>lf', ':Format<CR>', opts)
 
 -- Floaterm keymaps
