@@ -17,6 +17,8 @@ end
 local servers = {
 	'sumneko_lua',
 	'gopls',
+    'pyright',
+    'clangd',
 }
 
 mason.setup({
