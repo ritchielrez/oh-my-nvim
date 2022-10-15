@@ -134,7 +134,7 @@ for _, server in pairs(servers) do
 	opts = {
 		autostart = false,
 		on_attach = on_attach,
-		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+		capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	}
 
 	server = vim.split(server, '@')[1]
