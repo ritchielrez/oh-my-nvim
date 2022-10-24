@@ -39,3 +39,11 @@ map('n', '<Leader>lf', ':Format<CR>', opts)
 
 -- Floaterm keymaps
 map('n', '<C-\\>', ':FloatermToggle<CR>', opts)
+
+-- Command corrections
+map('c', 'W<CR>', 'w<CR>', {})
+map('c', 'Wq<CR>', 'wq<CR>', {})
+map('c', 'Q<CR>', 'q<CR>', {})
+map('c', 'Q!<CR>', 'q!<CR>', {})
+map('c', 'Qa!<CR>', 'qa!<CR>', {})
+map('c', 'QA!<CR>', 'qa!<CR>', {})
