@@ -1,9 +1,11 @@
 local dap = require('dap')
 
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = 'C:/Users/strange.ritchiel/AppData/Local/nvim-data/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7.exe',
+  command = mason_path .. 'packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7.exe',
   options = {
     detached = false
   }
