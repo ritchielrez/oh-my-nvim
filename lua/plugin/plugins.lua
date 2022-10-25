@@ -42,6 +42,7 @@ return packer.startup(function(use)
 	use({ 'tiagovla/tokyodark.nvim', after = 'nvim-treesitter' })
 	use({ 'catppuccin/nvim', as = 'catppuccin', after = 'nvim-treesitter' })
 	use({ 'sainnhe/gruvbox-material', after = 'nvim-treesitter' })
+	use({ 'sainnhe/everforest', after = 'nvim-treesitter' })
 
 	-- Fuzzy text searcher
 	use({
