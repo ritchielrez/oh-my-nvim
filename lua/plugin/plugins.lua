@@ -36,13 +36,15 @@ return packer.startup(function(use)
 	use('wbthomason/packer.nvim') -- Keep packer.nvim up-to-date
 	use('nvim-lua/plenary.nvim') -- Useful lua functions used by lots of plugins
 
-	-- Colorscheme related plugins
+	-- UI related plugins
 	use('nvim-treesitter/nvim-treesitter') -- Set of languge parsers for better syntax highlighting
 
 	use({ 'tiagovla/tokyodark.nvim', after = 'nvim-treesitter' })
 	use({ 'catppuccin/nvim', as = 'catppuccin', after = 'nvim-treesitter' })
 	use({ 'sainnhe/gruvbox-material', after = 'nvim-treesitter' })
 	use({ 'sainnhe/everforest', after = 'nvim-treesitter' })
+    use('kyazdani42/nvim-web-devicons')
+	use('nvim-lualine/lualine.nvim')
 
 	-- Fuzzy text searcher
 	use({
