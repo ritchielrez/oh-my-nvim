@@ -110,7 +110,7 @@ catppuccin.setup({
 })
 -- Sets the colorscheme
 vim.cmd([[colorscheme catppuccin]])
-vim.cmd([[colorscheme gruvbox-material]])
+vim.cmd([[colorscheme everforest]])
 
 vim.cmd([[
 highlight TelescopeSelection guibg=none

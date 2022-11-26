@@ -95,7 +95,6 @@ return packer.startup(function(use)
 		ft = 'go',
 	})
 
-	use('puremourning/vimspector')
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
 	end
