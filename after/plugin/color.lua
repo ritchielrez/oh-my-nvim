@@ -109,24 +109,8 @@ catppuccin.setup({
 	highlight_overrides = {},
 })
 -- Sets the colorscheme
-vim.cmd([[colorscheme catppuccin]])
-vim.cmd([[colorscheme everforest]])
+vim.cmd.colorscheme('catppuccin')
+vim.cmd.colorscheme('gruvbox-material')
 
-vim.cmd([[
-highlight TelescopeSelection guibg=none
-highlight link TelescopeSelectionCaret Orange
-]])
-
--- Treesitter: syntax parser
-local treesitter_ok, configs = pcall(require, 'nvim-treesitter.configs')
-if not treesitter_ok then
-	print('Treesitter plugin not installed')
-end
-
-configs.setup({
-	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = { '' }, -- list of language that will be disabled
-		additional_vim_regex_highlighting = false,
-	},
-})
+vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { link = 'Orange' })
