@@ -15,8 +15,7 @@ if not lspconfig_ok then
 end
 
 local servers = {
-	'sumneko_lua',
-	'gopls',
+	'lua_ls',
     'pyright',
     'clangd',
 }
@@ -33,7 +32,7 @@ mason.setup({
 
 mason_lspconfig.setup({
 	ensure_installed = servers,
-	automatic_installation = true,
+	automatic_installation = false,
 })
 
 local opts = {}
