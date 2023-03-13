@@ -87,3 +87,6 @@ telescope.setup({
 		},
 	},
 })
+
+vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { link = 'Orange' })

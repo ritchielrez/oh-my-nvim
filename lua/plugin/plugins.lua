@@ -37,14 +37,27 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim') -- Useful lua functions used by lots of plugins
 
 	-- UI related plugins
-	use({ 'nvim-treesitter/nvim-treesitter', tag = '0.1.0' }) -- Set of languge parsers for better syntax highlighting
+	use({ 'nvim-treesitter/nvim-treesitter' }) -- Set of languge parsers for better syntax highlighting
 
-	use({ 'tiagovla/tokyodark.nvim', after = 'nvim-treesitter' })
-	use({ 'catppuccin/nvim', as = 'catppuccin', after = 'nvim-treesitter' })
-	use({ 'sainnhe/gruvbox-material', after = 'nvim-treesitter' })
-	use({ 'sainnhe/everforest', after = 'nvim-treesitter' })
+	use('tiagovla/tokyodark.nvim')
+	use({ 'catppuccin/nvim', as = 'catppuccin' })
+	use('sainnhe/gruvbox-material')
+	use({
+        'sainnhe/everforest',
+        config = function ()
+            vim.cmd.colorscheme('everforest')
+        end,
+    })
 	use('kyazdani42/nvim-web-devicons')
 	use('nvim-lualine/lualine.nvim')
+
+	-- Code commenter
+	use({
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end,
+	})
 
 	-- Fuzzy text searcher
 	use({

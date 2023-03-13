@@ -4,8 +4,6 @@ vim.g.tokyodark_enable_italic_comment = false
 
 vim.g.gruvbox_material_transparent_background = 2
 
-vim.g.everforest_background = 'soft'
-vim.g.everforest_better_performance = 1
 vim.g.everforest_transparent_background = 1
 
 vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
@@ -109,8 +107,5 @@ catppuccin.setup({
 	highlight_overrides = {},
 })
 -- Sets the colorscheme
-vim.cmd.colorscheme('catppuccin')
-vim.cmd.colorscheme('gruvbox-material')
-
-vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { link = 'Orange' })
+vim.opt.termguicolors = true
+vim.cmd.colorscheme('everforest')
