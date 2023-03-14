@@ -108,4 +108,4 @@ catppuccin.setup({
 })
 -- Sets the colorscheme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('gruvbox-material')
