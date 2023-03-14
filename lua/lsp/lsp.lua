@@ -120,7 +120,7 @@ local function on_attach(client, bufnr)
 	lsp_diagnostics()
 	lsp_keymaps(bufnr)
 
-	if client.name == 'sumneko_lua' then
+	if client.name == 'lua_ls' then
 		client.server_capabilities.document_formatting = false
 	end
 
@@ -138,7 +138,7 @@ for _, server in pairs(servers) do
 
 	server = vim.split(server, '@')[1]
 
-	if server == 'sumneko_lua' then
+	if server == 'lua_ls' then
 		local sumneko_lua_opts = require('lsp.settings.sumneko_lua')
 		opts = vim.tbl_deep_extend('force', sumneko_lua_opts, opts)
 	end
