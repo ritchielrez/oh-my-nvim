@@ -29,6 +29,7 @@ map('n', '<Leader>so', ':luafile %<CR>', opts)
 -- Telescope: fuzzy finder
 map('n', '<Leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<Leader>fo', ':Telescope oldfiles<CR>', opts)
+map('n', '<Leader>fg', ':Telescope git_files<CR>', opts)
 
 -- Generic lsp keymaps
 map('n', '<Leader>ls', ':LspStart<CR>', opts)
