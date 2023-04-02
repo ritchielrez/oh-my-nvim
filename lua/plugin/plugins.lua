@@ -43,11 +43,11 @@ return packer.startup(function(use)
 	use({ 'catppuccin/nvim', as = 'catppuccin' })
 	use('sainnhe/gruvbox-material')
 	use({
-        'sainnhe/everforest',
-        config = function ()
-            vim.cmd.colorscheme('everforest')
-        end,
-    })
+		'sainnhe/everforest',
+		config = function()
+			vim.cmd.colorscheme('everforest')
+		end,
+	})
 	use('kyazdani42/nvim-web-devicons')
 	use('nvim-lualine/lualine.nvim')
 
@@ -106,6 +106,14 @@ return packer.startup(function(use)
 	use({
 		'leoluz/nvim-dap-go',
 		ft = 'go',
+	})
+
+	-- Delay repeat execution of certain keys
+	use({
+		'ja-ford/delaytrain.nvim',
+		config = function()
+			require('delaytrain').setup()
+		end,
 	})
 
 	if PACKER_BOOTSTRAP then
