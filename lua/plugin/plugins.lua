@@ -108,14 +108,6 @@ return packer.startup(function(use)
 		ft = 'go',
 	})
 
-	-- Delay repeat execution of certain keys
-	use({
-		'ja-ford/delaytrain.nvim',
-		config = function()
-			require('delaytrain').setup()
-		end,
-	})
-
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
 	end
