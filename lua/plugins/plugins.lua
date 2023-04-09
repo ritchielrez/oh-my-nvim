@@ -51,10 +51,10 @@ return packer.startup(function(use)
 	use({
 		'numToStr/Comment.nvim',
 		config = function()
-            local comment_status_ok, comment = pcall(require, 'Comment')
-            if not comment_status_ok then
-                print('Comment.nvim plugin not installed')
-            end
+			local comment_status_ok, comment = pcall(require, 'Comment')
+			if not comment_status_ok then
+				print('Comment.nvim plugin not installed')
+			end
 			comment.setup()
 		end,
 	})
@@ -85,6 +85,24 @@ return packer.startup(function(use)
 	use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
 	use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
 	use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
+
+	use({
+		'lvimuser/lsp-inlayhints.nvim',
+		event = 'LspAttach',
+		config = function()
+			require('lsp-inlayhints').setup(opts)
+			vim.api.nvim_create_autocmd('LspAttach', {
+				group = vim.api.nvim_create_augroup('LspAttach_inlayhints', {}),
+				callback = function(args)
+					if not (args.data and args.data.client_id) then
+						return
+					end
+					local client = vim.lsp.get_client_by_id(args.data.client_id)
+					require('lsp-inlayhints').on_attach(client, args.buf)
+				end,
+			})
+		end,
+	})
 
 	use('onsails/lspkind.nvim')
 
