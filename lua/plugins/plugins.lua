@@ -51,7 +51,11 @@ return packer.startup(function(use)
 	use({
 		'numToStr/Comment.nvim',
 		config = function()
-			require('Comment').setup()
+            local comment_status_ok, comment = pcall(require, 'Comment')
+            if not comment_status_ok then
+                print('Comment.nvim plugin not installed')
+            end
+			comment.setup()
 		end,
 	})
 
@@ -60,7 +64,7 @@ return packer.startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		cmd = { 'Telescope' },
 		config = function()
-			require('plugin.telescope')
+			require('plugins.telescope')
 		end,
 	})
 
