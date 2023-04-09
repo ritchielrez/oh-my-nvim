@@ -6,6 +6,13 @@ vim.g.gruvbox_material_transparent_background = 2
 
 vim.g.everforest_transparent_background = 1
 
+vim.g.nord_contrast = true
+vim.g.nord_borders = false
+vim.g.nord_disable_background = true
+vim.g.nord_italic = false
+vim.g.nord_uniform_diff_background = true
+vim.g.nord_bold = false
+
 vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
 
 local catppuccin_status_ok, catppuccin = pcall(require, 'catppuccin')
@@ -108,4 +115,4 @@ catppuccin.setup({
 })
 -- Sets the colorscheme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('gruvbox-material')
+vim.cmd.colorscheme('catppuccin')

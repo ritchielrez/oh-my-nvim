@@ -8,12 +8,25 @@ if not snip_status_ok then
 	print('Luasnip plugin not installed')
 end
 
+local lspkind_status_ok, lspkind = pcall(require, 'lspkind')
+if not lspkind_status_ok then
+    print('Lspkind plugin not installed')
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
 		end,
 	},
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            maxwidth = 100,
+            ellipsis_char = '...',
+            symbol_map = require('defaults.icons').kind,
+        })
+    },
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),

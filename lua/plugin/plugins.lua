@@ -48,6 +48,7 @@ return packer.startup(function(use)
 			vim.cmd.colorscheme('everforest')
 		end,
 	})
+    use('shaunsingh/nord.nvim')
 	use('kyazdani42/nvim-web-devicons')
 	use('nvim-lualine/lualine.nvim')
 
@@ -85,6 +86,8 @@ return packer.startup(function(use)
 	use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
 	use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
 	use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
+
+    use('onsails/lspkind.nvim')
 
 	use({ 'L3MON4D3/LuaSnip', after = 'nvim-cmp' })
 	use({ 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' })
