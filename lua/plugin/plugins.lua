@@ -42,13 +42,8 @@ return packer.startup(function(use)
 	use('tiagovla/tokyodark.nvim')
 	use({ 'catppuccin/nvim', as = 'catppuccin' })
 	use('sainnhe/gruvbox-material')
-	use({
-		'sainnhe/everforest',
-		config = function()
-			vim.cmd.colorscheme('everforest')
-		end,
-	})
-    use('shaunsingh/nord.nvim')
+	use('sainnhe/everforest')
+	use('shaunsingh/nord.nvim')
 	use('kyazdani42/nvim-web-devicons')
 	use('nvim-lualine/lualine.nvim')
 
@@ -87,7 +82,7 @@ return packer.startup(function(use)
 	use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
 	use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
 
-    use('onsails/lspkind.nvim')
+	use('onsails/lspkind.nvim')
 
 	use({ 'L3MON4D3/LuaSnip', after = 'nvim-cmp' })
 	use({ 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' })
@@ -96,6 +91,18 @@ return packer.startup(function(use)
 
 	-- Integrated terminal
 	use({ 'voldikss/vim-floaterm', cmd = { 'FloatermToggle' } })
+
+	-- Git
+	use({
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			local gitsigns_status_ok, gitsigns = pcall(require, 'gitsigns')
+			if not gitsigns_status_ok then
+				print('Gitsigns plugin not installed')
+			end
+			gitsigns.setup()
+		end,
+	})
 
 	-- Debugging
 	use('mfussenegger/nvim-dap')
