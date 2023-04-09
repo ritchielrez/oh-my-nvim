@@ -27,7 +27,7 @@ map('n', '<Leader>e', ':20Lex<CR>', opts)
 map('n', '<Leader>so', ':luafile %<CR>', opts)
 
 -- Telescope: fuzzy finder
-map('n', '<Leader>ff', ':Telescope find_files<CR>', opts)
+map('n', '<Leader>ff', ':Telescope find_files no_ignore=true<CR>', opts)
 map('n', '<Leader>fo', ':Telescope oldfiles<CR>', opts)
 map('n', '<Leader>fg', ':Telescope git_files<CR>', opts)
 
