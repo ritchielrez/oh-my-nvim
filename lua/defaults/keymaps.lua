@@ -51,6 +51,8 @@ map('c', 'Qa!', 'qa!', {})
 map('c', 'QA!', 'qa!', {})
 
 -- Git related keymaps
-map('n', '<Leader>gb', ':Gitsigns toggle_current_line_blame<CR>', opts)
-map('n', '<Leader>ghs', ':Gitsigns stage_hunk<CR>', opts)
+map({ 'n', 'v' }, '<Leader>gb', ':Gitsigns toggle_current_line_blame<CR>', opts)
+map({ 'n', 'v' }, '<Leader>ghs', ':Gitsigns stage_hunk<CR>', opts)
 map('n', '<Leader>gc', ':Git commit<CR>', opts)
+map('n', '<Leader>gp', ':Git push<CR>', opts)
+
