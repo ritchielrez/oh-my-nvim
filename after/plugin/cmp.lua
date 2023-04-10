@@ -14,6 +14,11 @@ if not lspkind_status_ok then
 end
 
 cmp.setup({
+	window = {
+		completion = {
+			scrollbar = false,
+		},
+	},
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
