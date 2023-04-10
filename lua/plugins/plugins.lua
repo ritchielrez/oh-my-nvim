@@ -115,6 +115,7 @@ return packer.startup(function(use)
             gitsigns.setup()
         end,
     })
+    use('tpope/vim-fugitive')
 
     -- Debugging
     use('mfussenegger/nvim-dap')
