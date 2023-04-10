@@ -21,6 +21,7 @@ if not catppuccin_status_ok then
 end
 
 catppuccin.setup({
+    no_italic = true,
 	dim_inactive = {
 		enabled = false,
 		shade = 'dark',
@@ -57,10 +58,10 @@ catppuccin.setup({
 				information = {},
 			},
 			underlines = {
-				errors = { 'underline' },
-				hints = { 'underline' },
-				warnings = { 'underline' },
-				information = { 'underline' },
+				errors = { 'undercurl' },
+				hints = { 'undercurl' },
+				warnings = { 'undercurl' },
+				information = { 'undercurl' },
 			},
 		},
 		coc_nvim = false,
