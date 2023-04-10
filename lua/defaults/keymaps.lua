@@ -34,6 +34,7 @@ map('n', '<Leader>fg', ':Telescope git_files<CR>', opts)
 -- Generic lsp keymaps
 map('n', '<Leader>ls', ':LspStart<CR>', opts)
 map('n', '<Leader>lx', ':LspStop<CR>', opts)
+map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]])
 map('n', '<Leader>lf', ':Format<CR>', opts)
