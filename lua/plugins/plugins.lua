@@ -91,7 +91,7 @@ return packer.startup(function(use)
 		event = 'LspAttach',
 		config = function()
             local pretty_hover_status_ok, pretty_hover = pcall(require, pretty_hover)
-			pretty_hover.setup(options)
+			pretty_hover.setup()
 		end,
 	})
 
