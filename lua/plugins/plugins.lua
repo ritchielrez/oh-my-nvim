@@ -87,6 +87,15 @@ return packer.startup(function(use)
 	use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
 
 	use({
+		'Fildo7525/pretty_hover',
+		event = 'LspAttach',
+		config = function()
+            local pretty_hover_status_ok, pretty_hover = pcall(require, pretty_hover)
+			pretty_hover.setup(options)
+		end,
+	})
+
+	use({
 		'lvimuser/lsp-inlayhints.nvim',
 		event = 'LspAttach',
 		config = function()
