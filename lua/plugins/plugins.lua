@@ -138,6 +138,7 @@ return packer.startup(function(use)
 		end,
 	})
 	use('tpope/vim-fugitive')
+    use('seanbreckenridge/yadm-git.vim')
 
 	-- Debugging
 	use('mfussenegger/nvim-dap')
