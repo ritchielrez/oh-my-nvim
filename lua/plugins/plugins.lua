@@ -138,7 +138,12 @@ return packer.startup(function(use)
 		end,
 	})
 	use('tpope/vim-fugitive')
-    use('seanbreckenridge/yadm-git.vim')
+	use({
+		'seanbreckenridge/yadm-git.vim',
+		config = function()
+			vim.g.yadm_git_gitgutter_enabled = 0
+		end,
+	})
 
 	-- Debugging
 	use('mfussenegger/nvim-dap')
