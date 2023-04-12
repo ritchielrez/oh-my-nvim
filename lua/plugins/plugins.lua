@@ -131,9 +131,9 @@ return packer.startup(function(use)
                 current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
                 sign_priority = 6,
                 update_debounce = 100,
-            })
-        end,
-    })
+				yadm = {
+					enable = false,
+				},
     use('tpope/vim-fugitive')
 
     -- Debugging
