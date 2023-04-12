@@ -132,7 +132,7 @@ return packer.startup(function(use)
 				sign_priority = 6,
 				update_debounce = 100,
 				yadm = {
-					enable = false,
+					enable = true,
 				},
 			})
 		end,
