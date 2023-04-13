@@ -119,6 +119,7 @@ require('lazy').setup({
     -- Debugging
     {
         'mfussenegger/nvim-dap',
+        event = 'VeryLazy',
         dependencies = 'rcarriga/nvim-dap-ui',
         config = function()
             require('dap.dapui')
