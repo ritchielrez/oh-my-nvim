@@ -2,24 +2,28 @@ local dap = require('dap')
 
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 
-dap.adapters.cppdbg = {
-  id = 'cppdbg',
-  type = 'executable',
-  command = mason_path .. 'packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7.exe',
-  options = {
-    detached = false
+dap.adapters.codelldb = {
+  type = 'server',
+  port = "${port}",
+  executable = {
+    -- CHANGE THIS to your path!
+    command = mason_path .. 'packages/codelldb/codelldb',
+    args = {"--port", "${port}"},
+
+    -- On windows you may have to uncomment this:
+    -- detached = false,
   }
 }
 
 dap.configurations.cpp = {
   {
     name = "Launch file",
-    type = "cppdbg",
+    type = "codelldb",
     request = "launch",
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
     cwd = '${workspaceFolder}',
-    stopAtEntry = true,
-  }
+    stopOnEntry = false,
+  },
 }
