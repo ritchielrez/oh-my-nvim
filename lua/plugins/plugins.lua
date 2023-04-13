@@ -1,165 +1,131 @@
--- Install packer.nvim plugin manager
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		'git',
-		'clone',
-		'--depth',
-		'1',
-		'https://github.com/wbthomason/packer.nvim',
-		install_path,
-	})
-	print('Installing packer.nvim, close and reopen Neovim...')
-	vim.cmd([[packadd packer.nvim]])
+-- Install lazy.nvim plugin manager
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
+        lazypath,
+    })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Load packer.nvim plugin manager
-local packer_ok, packer = pcall(require, 'packer')
-if not packer_ok then
-	return
-end
+require('lazy').setup({
+    'nvim-lua/plenary.nvim', -- Useful lua functions used by lots of plugins
 
--- Install all the needed plugins
-return packer.startup(function(use)
-	-- Improves startup time, recommended to load before any other plugins
-	use({
-		'lewis6991/impatient.nvim',
-		config = function()
-			local impatient_ok, _ = pcall(require, 'impatient')
-			if not impatient_ok then
-				print('Impatient.nvim plugin not installed')
-			end
-		end,
-	})
+    -- UI related plugins
+    'nvim-treesitter/nvim-treesitter', -- Set of languge parsers for better syntax highlighting
 
-	use('wbthomason/packer.nvim') -- Keep packer.nvim up-to-date
-	use('nvim-lua/plenary.nvim') -- Useful lua functions used by lots of plugins
+    'tiagovla/tokyodark.nvim',
+    { 'catppuccin/nvim',       name = 'catppuccin' },
+    'sainnhe/gruvbox-material',
+    'sainnhe/everforest',
+    'shaunsingh/nord.nvim',
+    'kyazdani42/nvim-web-devicons',
+    'nvim-lualine/lualine.nvim',
 
-	-- UI related plugins
-	use({ 'nvim-treesitter/nvim-treesitter' }) -- Set of languge parsers for better syntax highlighting
+    -- Code commenter
+    {
+        'numToStr/Comment.nvim',
+        event = 'VeryLazy',
+        config = {},
+    },
 
-	use('tiagovla/tokyodark.nvim')
-	use({ 'catppuccin/nvim', as = 'catppuccin' })
-	use('sainnhe/gruvbox-material')
-	use('sainnhe/everforest')
-	use('shaunsingh/nord.nvim')
-	use('kyazdani42/nvim-web-devicons')
-	use('nvim-lualine/lualine.nvim')
+    -- Fuzzy text searcher
+    {
+        'nvim-telescope/telescope.nvim',
+        cmd = { 'Telescope' },
+        config = function()
+            require('plugins.telescope')
+        end,
+    },
 
-	-- Code commenter
-	use({
-		'numToStr/Comment.nvim',
-		config = function()
-			local comment_status_ok, comment = pcall(require, 'Comment')
-			if not comment_status_ok then
-				print('Comment.nvim plugin not installed')
-			end
-			comment.setup()
-		end,
-	})
+    -- Language server protocol support
+    'j-hui/fidget.nvim',
+    {
+        'williamboman/mason.nvim',
+        dependencies = 'williamboman/mason-lspconfig.nvim',
+        config = function()
+            require('lsp.lsp')
+        end,
+    },
+    'neovim/nvim-lspconfig',
 
-	-- Fuzzy text searcher
-	use({
-		'nvim-telescope/telescope.nvim',
-		cmd = { 'Telescope' },
-		config = function()
-			require('plugins.telescope')
-		end,
-	})
+    {
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-nvim-lua',
+            'hrsh7th/cmp-nvim-lsp-signature-help',
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+        },
+    },
 
-	-- Language server protocol support
-	use('j-hui/fidget.nvim')
-	use('williamboman/mason.nvim')
-	use('neovim/nvim-lspconfig')
-	use({
-		'williamboman/mason-lspconfig.nvim',
-		after = 'mason.nvim',
-		config = function()
-			require('lsp.lsp')
-		end,
-	})
-	use('hrsh7th/nvim-cmp')
-	use({ 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' })
-	use({ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' })
-	use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
-	use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
-	use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
+    {
+        'Fildo7525/pretty_hover',
+        event = 'LspAttach',
+        config = function()
+            require('lsp.pretty_hover')
+        end,
+    },
 
-	use({
-		'Fildo7525/pretty_hover',
-		event = 'LspAttach',
-		config = function()
-			require('lsp.pretty_hover')
-		end,
-	})
+    {
+        'lvimuser/lsp-inlayhints.nvim',
+        event = 'LspAttach',
+        config = function()
+            require('lsp.inlayhints')
+        end,
+    },
 
-	use({
-		'lvimuser/lsp-inlayhints.nvim',
-		event = 'LspAttach',
-		config = function()
-			require('lsp.inlayhints')
-		end,
-	})
+    'onsails/lspkind.nvim',
 
-	use('onsails/lspkind.nvim')
+    'jose-elias-alvarez/null-ls.nvim',
 
-	use({ 'L3MON4D3/LuaSnip', after = 'nvim-cmp' })
-	use({ 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' })
+    -- Integrated terminal
+    { 'voldikss/vim-floaterm', cmd = { 'FloatermToggle' } },
 
-	use('jose-elias-alvarez/null-ls.nvim')
+    -- Git
+    {
+        'lewis6991/gitsigns.nvim',
+        config = {
+            current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+            current_line_blame_opts = {
+                virt_text = true,
+                virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+                delay = 1000,
+                ignore_whitespace = false,
+            },
+            current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+            sign_priority = 6,
+            update_debounce = 100,
+            yadm = {
+                enable = true,
+            },
+        },
+    },
+    'tpope/vim-fugitive',
+    {
+        'seanbreckenridge/yadm-git.vim',
+        config = function()
+            vim.g.yadm_git_gitgutter_enabled = 0
+        end,
+    },
 
-	-- Integrated terminal
-	use({ 'voldikss/vim-floaterm', cmd = { 'FloatermToggle' } })
-
-	-- Git
-	use({
-		'lewis6991/gitsigns.nvim',
-		config = function()
-			local gitsigns_status_ok, gitsigns = pcall(require, 'gitsigns')
-			if not gitsigns_status_ok then
-				print('Gitsigns plugin not installed')
-			end
-			gitsigns.setup({
-				current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
-				current_line_blame_opts = {
-					virt_text = true,
-					virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-					delay = 1000,
-					ignore_whitespace = false,
-				},
-				current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
-				sign_priority = 6,
-				update_debounce = 100,
-				yadm = {
-					enable = true,
-				},
-			})
-		end,
-	})
-	use('tpope/vim-fugitive')
-	use({
-		'seanbreckenridge/yadm-git.vim',
-		config = function()
-			vim.g.yadm_git_gitgutter_enabled = 0
-		end,
-	})
-
-	-- Debugging
-	use('mfussenegger/nvim-dap')
-	use({
-		'rcarriga/nvim-dap-ui',
-		after = 'nvim-dap',
-		config = function()
-			require('dap.dapui')
-		end,
-	})
-	use({
-		'leoluz/nvim-dap-go',
-		ft = 'go',
-	})
-
-	if PACKER_BOOTSTRAP then
-		require('packer').sync()
-	end
-end)
+    -- Debugging
+    {
+        'mfussenegger/nvim-dap',
+        dependencies = 'rcarriga/nvim-dap-ui',
+        config = function()
+            require('dap.dapui')
+        end,
+    },
+    {
+        'leoluz/nvim-dap-go',
+        ft = 'go',
+    },
+})
