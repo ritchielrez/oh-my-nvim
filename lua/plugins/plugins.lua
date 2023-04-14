@@ -19,7 +19,12 @@ require('lazy').setup({
 	'nvim-treesitter/nvim-treesitter', -- Set of languge parsers for better syntax highlighting
 
 	'tiagovla/tokyodark.nvim',
-	{ 'catppuccin/nvim', name = 'catppuccin' },
+	{
+		'catppuccin/nvim',
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		name = 'catppuccin',
+	},
 	'sainnhe/gruvbox-material',
 	'sainnhe/everforest',
 	'shaunsingh/nord.nvim',
