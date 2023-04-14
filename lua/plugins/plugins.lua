@@ -71,6 +71,9 @@ require('lazy').setup({
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip',
 		},
+        config = function()
+            require('lsp.cmp')
+        end,
 	},
 
 	{
