@@ -102,6 +102,7 @@ require('lazy').setup({
 	-- Git
 	{
 		'lewis6991/gitsigns.nvim',
+        opt = true,
 		opts = {
 			current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
 			current_line_blame_opts = {
@@ -121,6 +122,7 @@ require('lazy').setup({
 	'tpope/vim-fugitive',
 	{
 		'seanbreckenridge/yadm-git.vim',
+        opt = true,
 		config = function()
 			vim.g.yadm_git_gitgutter_enabled = 0
 		end,
