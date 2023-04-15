@@ -25,12 +25,20 @@ cmp.setup({
 		end,
 	},
 	formatting = {
-		format = lspkind.cmp_format({
-			mode = 'symbol',
-			maxwidth = 100,
-			ellipsis_char = '...',
-			symbol_map = require('defaults.icons').kind,
-		}),
+		fields = { 'kind', 'abbr', 'menu' },
+		format = function(entry, vim_item)
+			local kind = lspkind.cmp_format({
+				mode = 'symbol_text',
+				maxwidth = 100,
+				ellipsis_char = '...',
+				symbol_map = require('defaults.icons').kind,
+			})(entry, vim_item)
+			local strings = vim.split(kind.kind, '%s', { trimempty = true })
+			kind.kind = ' ' .. (strings[1] or '') .. ' '
+			kind.menu = '    (' .. (strings[2] or '') .. ')'
+
+			return kind
+		end,
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
