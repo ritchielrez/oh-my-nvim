@@ -41,7 +41,8 @@ require('lazy').setup({
 	-- Fuzzy text searcher
 	{
 		'nvim-telescope/telescope.nvim',
-		cmd = { 'Telescope' },
+        event = 'VeryLazy',
+        dependencies = 'nvim-telescope/telescope-ui-select.nvim',
 		config = function()
 			require('plugins.telescope')
 		end,
