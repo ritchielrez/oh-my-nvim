@@ -86,7 +86,13 @@ telescope.setup({
 			},
 		},
 	},
+	extensions = {
+		['ui-select'] = {
+			require('telescope.themes').get_dropdown(),
+		},
+	},
 })
+telescope.load_extension('ui-select')
 
 vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { link = 'Orange' })
