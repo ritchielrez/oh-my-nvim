@@ -8,8 +8,8 @@ if not dap_ui_status_ok then
 	return
 end
 
--- Local config for nvim-dap
 require('dap.dap')
+require('dap.tasks')
 
 -- dapui.setup()
 dapui.setup({
