@@ -41,8 +41,8 @@ require('lazy').setup({
 	-- Fuzzy text searcher
 	{
 		'nvim-telescope/telescope.nvim',
-        event = 'VeryLazy',
-        dependencies = 'nvim-telescope/telescope-ui-select.nvim',
+		event = 'VeryLazy',
+		dependencies = 'nvim-telescope/telescope-ui-select.nvim',
 		config = function()
 			require('plugins.telescope')
 		end,
@@ -61,11 +61,10 @@ require('lazy').setup({
 			require('lsp.lsp')
 		end,
 	},
-	'neovim/nvim-lspconfig',
 
 	{
 		'hrsh7th/nvim-cmp',
-        event = "InsertEnter",
+		event = 'InsertEnter',
 		dependencies = {
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
@@ -75,9 +74,9 @@ require('lazy').setup({
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip',
 		},
-        config = function()
-            require('lsp.cmp')
-        end,
+		config = function()
+			require('lsp.cmp')
+		end,
 	},
 
 	{
@@ -106,7 +105,7 @@ require('lazy').setup({
 	-- Git
 	{
 		'lewis6991/gitsigns.nvim',
-        opt = true,
+		opt = true,
 		opts = {
 			current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
 			current_line_blame_opts = {
@@ -126,7 +125,7 @@ require('lazy').setup({
 	'tpope/vim-fugitive',
 	{
 		'seanbreckenridge/yadm-git.vim',
-        opt = true,
+		opt = true,
 		config = function()
 			vim.g.yadm_git_gitgutter_enabled = 0
 		end,
@@ -137,9 +136,9 @@ require('lazy').setup({
 		'mfussenegger/nvim-dap',
 		event = 'VeryLazy',
 		dependencies = {
-            'rcarriga/nvim-dap-ui',
-            'Shatur/neovim-tasks',
-        },
+			'rcarriga/nvim-dap-ui',
+			'Shatur/neovim-tasks',
+		},
 		config = function()
 			require('dap.dapui')
 		end,
