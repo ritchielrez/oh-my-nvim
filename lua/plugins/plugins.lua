@@ -63,6 +63,37 @@ require('lazy').setup({
 	},
 
 	{
+		'nvimdev/lspsaga.nvim',
+        cmd = 'Lspsaga',
+		opts = {
+			request_timeout = 2000,
+			ui = {
+				-- This option only works in Neovim 0.9
+				title = true,
+				-- Border type can be single, double, rounded, solid, shadow.
+				border = 'single',
+				winblend = 0,
+				expand = '',
+				collapse = '',
+				code_action = require('defaults.icons').diagnostics.BoldHint,
+				incoming = ' ',
+				outgoing = ' ',
+				hover = ' ',
+			},
+			lightbulb = {
+				enable = false,
+				enable_in_insert = false,
+				sign = true,
+				sign_priority = 40,
+				virtual_text = false,
+			},
+            symbol_in_winbar = {
+                enable = false,
+            },
+		},
+	},
+
+	{
 		'hrsh7th/nvim-cmp',
 		event = 'InsertEnter',
 		dependencies = {
@@ -79,13 +110,13 @@ require('lazy').setup({
 		end,
 	},
 
-	{
-		'Fildo7525/pretty_hover',
-		event = 'LspAttach',
-		config = function()
-			require('lsp.pretty_hover')
-		end,
-	},
+	-- {
+	-- 	'Fildo7525/pretty_hover',
+	-- 	event = 'LspAttach',
+	-- 	config = function()
+	-- 		require('lsp.pretty_hover')
+	-- 	end,
+	-- },
 
 	{
 		'lvimuser/lsp-inlayhints.nvim',
