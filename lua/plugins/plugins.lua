@@ -166,10 +166,7 @@ require('lazy').setup({
 	{
 		'mfussenegger/nvim-dap',
 		event = 'VeryLazy',
-		dependencies = {
-			'rcarriga/nvim-dap-ui',
-			'Shatur/neovim-tasks',
-		},
+		dependencies = 'rcarriga/nvim-dap-ui',
 		config = function()
 			require('dap.dapui')
 		end,
