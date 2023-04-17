@@ -64,7 +64,7 @@ require('lazy').setup({
 
 	{
 		'nvimdev/lspsaga.nvim',
-        cmd = 'Lspsaga',
+		cmd = 'Lspsaga',
 		opts = {
 			request_timeout = 2000,
 			ui = {
@@ -87,9 +87,9 @@ require('lazy').setup({
 				sign_priority = 40,
 				virtual_text = false,
 			},
-            symbol_in_winbar = {
-                enable = false,
-            },
+			symbol_in_winbar = {
+				enable = false,
+			},
 		},
 	},
 
