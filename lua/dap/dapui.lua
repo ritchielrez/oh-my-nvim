@@ -9,7 +9,6 @@ if not dap_ui_status_ok then
 end
 
 require('dap.dap')
-require('dap.tasks')
 
 -- dapui.setup()
 dapui.setup({
