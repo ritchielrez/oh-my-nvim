@@ -59,9 +59,3 @@ map({ 'n', 'v' }, '<Leader>ghr', ':Gitsigns reset_hunk<CR>', opts)
 map('n', '<Leader>gc', ':Git commit<CR>', opts)
 map('n', '<Leader>gp', ':Git push<CR>', opts)
 map('n', '<Leader>gw', ':Gwrite<CR>', opts)
-
--- Build system related keymaps
--- Cmake
-map('n', '<Leader>cc', ':Task start cmake configure<CR>', opts)
-map('n', '<Leader>cb', ':Task start cmake build<CR>', opts)
-map('n', '<Leader>cs', ':Task set_module_param cmake target<CR>', opts)
