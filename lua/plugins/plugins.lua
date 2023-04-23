@@ -131,7 +131,7 @@ require('lazy').setup({
     'jose-elias-alvarez/null-ls.nvim',
 
     -- Integrated terminal
-    { 'voldikss/vim-floaterm', cmd = { 'FloatermToggle' } },
+    { 'voldikss/vim-floaterm', cmd = { 'FloatermToggle', 'FloatermNew' } },
 
     -- Git
     {
