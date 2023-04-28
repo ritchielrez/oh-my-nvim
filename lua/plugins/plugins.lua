@@ -110,14 +110,6 @@ require('lazy').setup({
         end,
     },
 
-    -- {
-    -- 	'Fildo7525/pretty_hover',
-    -- 	event = 'LspAttach',
-    -- 	config = function()
-    -- 		require('lsp.pretty_hover')
-    -- 	end,
-    -- },
-
     {
         'lvimuser/lsp-inlayhints.nvim',
         event = 'LspAttach',
