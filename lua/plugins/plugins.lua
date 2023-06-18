@@ -153,18 +153,11 @@ require('lazy').setup({
 			sign_priority = 6,
 			update_debounce = 100,
 			yadm = {
-				enable = true,
+				enable = false,
 			},
 		},
 	},
 	'tpope/vim-fugitive',
-	{
-		'seanbreckenridge/yadm-git.vim',
-		opt = true,
-		config = function()
-			vim.g.yadm_git_gitgutter_enabled = 0
-		end,
-	},
 
 	-- Debugging
 	{
