@@ -56,7 +56,12 @@ require('lazy').setup({
 	},
 
 	-- Language server protocol support
-	'j-hui/fidget.nvim',
+    {
+        'j-hui/fidget.nvim',
+        event = 'LspAttach',
+        branch = 'legacy',
+    },
+
 	{
 		'williamboman/mason.nvim',
 		event = 'VeryLazy',
