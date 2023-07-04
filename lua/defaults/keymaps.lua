@@ -40,9 +40,6 @@ map('n', '<leader>ca', ':Lspsaga code_action<CR>', opts)
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]])
 map('n', '<Leader>lf', ':Format<CR>', opts)
 
--- Floaterm keymaps
-map('n', '<C-\\>', ':FloatermToggle<CR>', opts)
-
 -- Command corrections
 map('c', 'W', 'w', {})
 map('c', 'Wq', 'wq', {})

@@ -42,25 +42,24 @@ require('lazy').setup({
 	{
 		'nvim-telescope/telescope.nvim',
 		event = 'VeryLazy',
-		dependencies = 
-        {
-            'nvim-telescope/telescope-ui-select.nvim',
-            {
-                'nvim-telescope/telescope-fzf-native.nvim',
-                 build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
-            },
-        },
+		dependencies = {
+			'nvim-telescope/telescope-ui-select.nvim',
+			{
+				'nvim-telescope/telescope-fzf-native.nvim',
+				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+			},
+		},
 		config = function()
 			require('plugins.telescope')
 		end,
 	},
 
 	-- Language server protocol support
-    {
-        'j-hui/fidget.nvim',
-        event = 'LspAttach',
-        branch = 'legacy',
-    },
+	{
+		'j-hui/fidget.nvim',
+		event = 'LspAttach',
+		branch = 'legacy',
+	},
 
 	{
 		'williamboman/mason.nvim',
@@ -135,8 +134,18 @@ require('lazy').setup({
 	'jose-elias-alvarez/null-ls.nvim',
 
 	-- Integrated terminal
-	{ 'voldikss/vim-floaterm', cmd = { 'FloatermToggle', 'FloatermNew' } },
-
+	{
+		'akinsho/toggleterm.nvim',
+		event = 'VeryLazy',
+		version = '*',
+		opts = {
+			open_mapping = [[<c-\>]],
+			terminal_mappings = true,
+			normal_mappings = true,
+			insert_mappings = true,
+			persist_size = true,
+		},
+	},
 	-- Git
 	{
 		'lewis6991/gitsigns.nvim',
