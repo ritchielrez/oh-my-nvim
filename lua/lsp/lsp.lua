@@ -101,17 +101,17 @@ end
 
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', ':Lspsaga goto_definition<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', ':Telescope lsp_declarations<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', ':Lspsaga hover_doc<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gI', ':Lspsaga lsp_finder<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', ':Telescope lsp_references<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gl', ':Lspsaga show_line_diagnostics<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', ':lua vim.lsp.buf.signature_help()<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', ':Lspsaga rename<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', ':Lspsaga diagnostic_jump_prev<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', ':Lspsaga diagnostic_jump_next<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', ':lua vim.diagnostic.setloclist()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>Telescope lsp_declarations<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gI', '<cmd>Telescope lsp_implementations<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 end
 
 local function on_attach(client, bufnr)
