@@ -2,9 +2,10 @@
 vim.g.tokyodark_enable_italic = false
 vim.g.tokyodark_enable_italic_comment = false
 
-vim.g.gruvbox_material_transparent_background = 2
-
-vim.g.everforest_transparent_background = 1
+if not vim.g.neovide then
+	vim.g.gruvbox_material_transparent_background = 2
+	vim.g.everforest_transparent_background = 1
+end
 
 vim.g.nord_contrast = true
 vim.g.nord_borders = false
