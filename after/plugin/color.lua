@@ -2,14 +2,17 @@
 vim.g.tokyodark_enable_italic = false
 vim.g.tokyodark_enable_italic_comment = false
 
+local transparent_background = true
+
 if not vim.g.neovide then
+	transparent_background = false
 	vim.g.gruvbox_material_transparent_background = 2
 	vim.g.everforest_transparent_background = 1
 end
 
 vim.g.nord_contrast = true
 vim.g.nord_borders = false
-vim.g.nord_disable_background = true
+vim.g.nord_disable_background = transparent_background
 vim.g.nord_italic = false
 vim.g.nord_uniform_diff_background = true
 vim.g.nord_bold = false
@@ -22,13 +25,13 @@ if not catppuccin_status_ok then
 end
 
 catppuccin.setup({
-    no_italic = true,
+	no_italic = true,
 	dim_inactive = {
 		enabled = false,
 		shade = 'dark',
 		percentage = 0.15,
 	},
-	transparent_background = true,
+	transparent_background = transparent_background,
 	term_colors = false,
 	compile = {
 		enabled = false,
