@@ -50,5 +50,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	end,
 })
 
-vim.o.shell = 'bash'
+-- vim.o.shell = 'bash'
+-- vim.o.shellcmdflag = '-s'
 vim.o.guifont = 'CaskaydiaCove Nerd Font:h14'
