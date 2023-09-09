@@ -2,10 +2,10 @@
 vim.g.tokyodark_enable_italic = false
 vim.g.tokyodark_enable_italic_comment = false
 
-local transparent_background = true
+local transparent_background = false
 
 if not vim.g.neovide then
-	transparent_background = false
+	transparent_background = true
 	vim.g.gruvbox_material_transparent_background = 2
 	vim.g.everforest_transparent_background = 1
 end
