@@ -43,7 +43,9 @@ require('lazy').setup({
 		'nvim-telescope/telescope.nvim',
 		event = 'VeryLazy',
 		dependencies = {
+			'nvim-telescope/telescope-project.nvim',
 			'nvim-telescope/telescope-ui-select.nvim',
+            'nvim-telescope/telescope-file-browser.nvim',
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				-- build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
@@ -162,4 +164,11 @@ require('lazy').setup({
 			vim.g.mkdp_echo_preview_url = 1
 		end,
 	},
+
+    -- Highlighting todo comments
+    {
+        'folke/todo-comments.nvim',
+        opt = true,
+        opts = {},
+    },
 })
