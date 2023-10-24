@@ -15,7 +15,7 @@ dap.adapters.codelldb = {
   }
 }
 
-dap.configurations.cpp = {
+dap.configurations.c = {
   {
     name = "Launch file",
     type = "codelldb",
