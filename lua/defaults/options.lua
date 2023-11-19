@@ -42,6 +42,10 @@ set.clipboard = 'unnamedplus'
 
 let.mapleader = ' '
 
+-- netrw
+let.netrw_banner = 0
+let.netrw_liststyle = 3
+
 -- Highlight the region on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
 	group = num_au,

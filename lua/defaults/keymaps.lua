@@ -57,3 +57,13 @@ map({ 'n', 'v' }, '<Leader>ghr', ':Gitsigns reset_hunk<CR>', opts)
 map('n', '<Leader>gc', ':Git commit<CR>', opts)
 map('n', '<Leader>gp', ':Git! push<CR>', opts)
 map('n', '<Leader>gw', ':Gwrite<CR>', opts)
+
+
+-- Automatically close brackets, parethesis, and quotes
+-- Thanks to @linuxdabbler
+map("i", "'", "''<left>")
+map("i", "\"", "\"\"<left>")
+map("i", "(", "()<left>")
+map("i", "[", "[]<left>")
+map("i", "{", "{}<left>")
+map("i", "/*", "/**/<left><left>")
