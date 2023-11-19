@@ -21,11 +21,13 @@ require('lazy').setup({
 	'tiagovla/tokyodark.nvim',
 	{
 		'catppuccin/nvim',
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
 		name = 'catppuccin',
 	},
-	'sainnhe/gruvbox-material',
+	{
+		'sainnhe/gruvbox-material',
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+	},
 	'sainnhe/everforest',
 	'shaunsingh/nord.nvim',
 	'kyazdani42/nvim-web-devicons',
@@ -45,7 +47,7 @@ require('lazy').setup({
 		dependencies = {
 			'nvim-telescope/telescope-project.nvim',
 			'nvim-telescope/telescope-ui-select.nvim',
-            'nvim-telescope/telescope-file-browser.nvim',
+			'nvim-telescope/telescope-file-browser.nvim',
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
@@ -102,8 +104,6 @@ require('lazy').setup({
 	},
 
 	'onsails/lspkind.nvim',
-
-	'jose-elias-alvarez/null-ls.nvim',
 
 	-- Integrated terminal
 	{
@@ -165,10 +165,10 @@ require('lazy').setup({
 		end,
 	},
 
-    -- Highlighting todo comments
-    {
-        'folke/todo-comments.nvim',
-        opt = true,
-        opts = {},
-    },
+	-- Highlighting todo comments
+	{
+		'folke/todo-comments.nvim',
+		opt = true,
+		opts = {},
+	},
 })
