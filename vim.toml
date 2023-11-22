@@ -1,0 +1,12 @@
+[selene]
+base = "lua51"
+name = "vim"
+
+[vim]
+any = true
+
+[jit]
+any = true
+
+[lints]
+mixed_table = "allowed"
