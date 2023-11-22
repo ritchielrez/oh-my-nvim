@@ -36,56 +36,7 @@ mason_lspconfig.setup({
 
 local opts = {}
 
-local function lsp_diagnostics()
-	local icons = require('defaults.icons')
-
-	local signs = {
-		{ name = 'DiagnosticSignError', text = icons.diagnostics.Error },
-		{ name = 'DiagnosticSignWarn', text = icons.diagnostics.Warning },
-		{ name = 'DiagnosticSignHint', text = icons.diagnostics.Hint },
-		{ name = 'DiagnosticSignInfo', text = icons.diagnostics.Information },
-	}
-
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
-	end
-
-	local config = {
-		virtual_lines = false,
-		virtual_text = false,
-		-- virtual_text = {
-		--   -- spacing = 7,
-		--   -- update_in_insert = false,
-		--   -- severity_sort = true,
-		--   -- prefix = "<-",
-		--   prefix = " ●",
-		--   source = "if_many", -- Or "always"
-		--   -- format = function(diag)
-		--   --   return diag.message .. "blah"
-		--   -- end,
-		-- },
-
-		-- show signs
-		signs = {
-			active = signs,
-		},
-		update_in_insert = true,
-		underline = true,
-		severity_sort = true,
-		float = {
-			focusable = true,
-			style = 'minimal',
-			border = 'none',
-			-- border = {"▄","▄","▄","█","▀","▀","▀","█"},
-			source = 'if_many', -- Or "always"
-			header = '',
-			prefix = '',
-			-- width = 40,
-		},
-	}
-
-	vim.diagnostic.config(config)
-
+local function lsp_config()
 	vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = 'none',
 		-- width = 60,
@@ -106,16 +57,12 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gI', '<cmd>Telescope lsp_implementations<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 end
 
 local function on_attach(client, bufnr)
-	lsp_diagnostics()
+	lsp_config()
 	lsp_keymaps(bufnr)
 
 	if client.name == 'lua_ls' then
