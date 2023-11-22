@@ -59,6 +59,21 @@ require('lazy').setup({
 		end,
 	},
 
+	-- Diagnostics support
+	{
+		'mfussenegger/nvim-lint',
+		config = function()
+			require('lint').linters_by_ft = {
+                gitcommit = { 'commitlint' },
+				lua = { 'selene' },
+			}
+			vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
+				callback = function()
+					require('lint').try_lint()
+				end,
+			})
+		end,
+	},
 	-- Language server protocol support
 	{
 		'j-hui/fidget.nvim',
