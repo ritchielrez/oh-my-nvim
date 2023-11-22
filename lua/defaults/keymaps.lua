@@ -67,3 +67,9 @@ map("i", "(", "()<left>")
 map("i", "[", "[]<left>")
 map("i", "{", "{}<left>")
 map("i", "/*", "/**/<left><left>")
+
+-- Diagnostics
+map('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+map('n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
