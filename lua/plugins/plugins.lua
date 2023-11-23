@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
+local plugins = {
 	'nvim-lua/plenary.nvim', -- Useful lua functions used by lots of plugins
 
 	-- UI related plugins
@@ -93,7 +93,7 @@ require('lazy').setup({
 		'mfussenegger/nvim-lint',
 		config = function()
 			require('lint').linters_by_ft = {
-                gitcommit = { 'commitlint' },
+				gitcommit = { 'commitlint' },
 				lua = { 'selene' },
 			}
 			vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
@@ -103,13 +103,8 @@ require('lazy').setup({
 			})
 		end,
 	},
-	-- Language server protocol support
-	{
-		'j-hui/fidget.nvim',
-		event = 'LspAttach',
-		branch = 'legacy',
-	},
 
+	-- Language server protocol support
 	{
 		'williamboman/mason.nvim',
 		event = 'VeryLazy',
@@ -215,4 +210,12 @@ require('lazy').setup({
 		opt = true,
 		opts = {},
 	},
-})
+}
+
+local opts = {
+	install = {
+		colorscheme = { 'default' },
+	},
+}
+
+require('lazy').setup(plugins, opts)
