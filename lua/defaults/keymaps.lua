@@ -58,16 +58,6 @@ map('n', '<Leader>gc', ':Git commit<CR>', opts)
 map('n', '<Leader>gp', ':Git! push<CR>', opts)
 map('n', '<Leader>gw', ':Gwrite<CR>', opts)
 
-
--- Automatically close brackets, parethesis, and quotes
--- Thanks to @linuxdabbler
-map("i", "'", "''<left>")
-map("i", "\"", "\"\"<left>")
-map("i", "(", "()<left>")
-map("i", "[", "[]<left>")
-map("i", "{", "{}<left>")
-map("i", "/*", "/**/<left><left>")
-
 -- Diagnostics
 map('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
