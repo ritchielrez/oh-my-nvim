@@ -40,6 +40,13 @@ require('lazy').setup({
 		opts = {},
 	},
 
+	-- Autopairs
+	{
+		'windwp/nvim-autopairs',
+		event = 'InsertEnter',
+		opts = {},
+	},
+
 	-- Fuzzy text searcher
 	{
 		'nvim-telescope/telescope.nvim',
