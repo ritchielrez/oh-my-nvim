@@ -1,7 +1,3 @@
--- Colorschemes' configuration
-vim.g.tokyodark_enable_italic = false
-vim.g.tokyodark_enable_italic_comment = false
-
 local transparent_background = false
 
 if not vim.g.neovide then
@@ -9,13 +5,6 @@ if not vim.g.neovide then
 	vim.g.gruvbox_material_transparent_background = 2
 	vim.g.everforest_transparent_background = 1
 end
-
-vim.g.nord_contrast = true
-vim.g.nord_borders = false
-vim.g.nord_disable_background = transparent_background
-vim.g.nord_italic = false
-vim.g.nord_uniform_diff_background = true
-vim.g.nord_bold = false
 
 vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
 
@@ -118,6 +107,3 @@ catppuccin.setup({
 	color_overrides = {},
 	highlight_overrides = {},
 })
--- Sets the colorscheme
-vim.opt.termguicolors = true
-vim.cmd.colorscheme('catppuccin')

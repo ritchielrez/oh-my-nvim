@@ -16,7 +16,13 @@ local plugins = {
 	'nvim-lua/plenary.nvim', -- Useful lua functions used by lots of plugins
 
 	-- UI related plugins
-	'nvim-treesitter/nvim-treesitter', -- Set of languge parsers for better syntax highlighting
+	-- Set of languge parsers for better syntax highlighting
+	{
+        'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require('ui.treesitter')
+        end,
+    },
 
 	'tiagovla/tokyodark.nvim',
 	{
@@ -24,6 +30,9 @@ local plugins = {
 		name = 'catppuccin',
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
+        config = function()
+            require('ui.catppuccin')
+        end,
 	},
 	{
 		'sainnhe/gruvbox-material',
@@ -31,7 +40,13 @@ local plugins = {
 	'sainnhe/everforest',
 	'shaunsingh/nord.nvim',
 	'kyazdani42/nvim-web-devicons',
-	'nvim-lualine/lualine.nvim',
+	
+    {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require('ui.lualine')
+        end,
+    },
 
 	-- Code commenter
 	{
@@ -92,6 +107,7 @@ local plugins = {
 	{
 		'mfussenegger/nvim-lint',
 		config = function()
+            require('diagnostics.diagnostics')
 			require('lint').linters_by_ft = {
 				gitcommit = { 'commitlint' },
 				lua = { 'selene' },
