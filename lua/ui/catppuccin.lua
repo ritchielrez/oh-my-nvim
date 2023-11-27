@@ -107,3 +107,5 @@ catppuccin.setup({
 	color_overrides = {},
 	highlight_overrides = {},
 })
+
+require('ui.color')
