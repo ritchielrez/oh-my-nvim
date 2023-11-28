@@ -62,8 +62,8 @@ local function lsp_keymaps(bufnr, lsp_format)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
 	if lsp_format then
-		vim.keymap.set('n', '<leader>lf', 'lua vim.lsp.buf.format({range = nil})<CR>', opts)
-		vim.keymap.set('v', '<leader>lf', 'lua vim.lsp.buf.format()<CR>', opts)
+		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lf', 'lua vim.lsp.buf.format({range = nil})<CR>', opts)
+		vim.api.nvim_buf_set_keymap(bufnr, 'v', '<leader>lf', 'lua vim.lsp.buf.format()<CR>', opts)
 	end
 end
 
