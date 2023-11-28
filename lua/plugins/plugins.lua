@@ -17,14 +17,6 @@ local plugins = {
 
 	----- UI related plugins
 
-	-- Set of languge parsers for better syntax highlighting
-	{
-		'nvim-treesitter/nvim-treesitter',
-		config = function()
-			require('ui.treesitter')
-		end,
-	},
-
 	-- Colorschemes
 	'tiagovla/tokyodark.nvim',
 	{
