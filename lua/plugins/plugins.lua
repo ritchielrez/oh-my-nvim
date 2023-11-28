@@ -138,6 +138,23 @@ local plugins = {
 		},
 	},
 
+	{
+		'mfussenegger/nvim-lint',
+		config = function()
+            require('language_support.diagnostics')
+
+			require('lint').linters_by_ft = {
+				lua = { 'selene' },
+			}
+
+			vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged', 'BufWritePost' }, {
+				callback = function()
+					require('lint').try_lint()
+				end,
+			})
+		end,
+	},
+
 	-- Language server protocol support
 	{
 		'neovim/nvim-lspconfig',
