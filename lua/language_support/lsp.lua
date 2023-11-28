@@ -34,7 +34,7 @@ mason_lspconfig.setup({
 	automatic_installation = false,
 })
 
-local opts = {}
+local opt = {}
 
 local function lsp_config()
 	vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -51,19 +51,19 @@ local function lsp_config()
 end
 
 local function lsp_keymaps(bufnr, lsp_format)
-	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>Telescope lsp_declarations<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gI', '<cmd>Telescope lsp_implementations<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	local bufopt = { noremap = true, silent = true }
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>Telescope lsp_definitions<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>Telescope lsp_declarations<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gI', '<cmd>Telescope lsp_implementations<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', bufopt)
 
 	if lsp_format then
-		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lf', 'lua vim.lsp.buf.format({range = nil})<CR>', opts)
-		vim.api.nvim_buf_set_keymap(bufnr, 'v', '<leader>lf', 'lua vim.lsp.buf.format()<CR>', opts)
+		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lf', 'lua vim.lsp.buf.format({range = nil})<CR>', bufopt)
+		vim.api.nvim_buf_set_keymap(bufnr, 'v', '<leader>lf', 'lua vim.lsp.buf.format()<CR>', bufopt)
 	end
 end
 
@@ -86,20 +86,20 @@ local function on_attach(client, bufnr)
 end
 
 for _, server in pairs(servers) do
-	opts = {
+	opt = {
 		autostart = false,
 		on_attach = on_attach,
 		capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	}
-	opts.capabilities.offsetEncoding = { 'utf-16' }
+	opt.capabilities.offsetEncoding = { 'utf-16' }
 
 	server = vim.split(server, '@')[1]
 
 	if server == 'lua_ls' then
 		local lua_ls_opts = require('language_support.settings.lua_ls')
-		opts = vim.tbl_deep_extend('force', lua_ls_opts, opts)
+		opt = vim.tbl_deep_extend('force', lua_ls_opts, opt)
 	end
 
-	lspconfig[server].setup(opts)
+	lspconfig[server].setup(opt)
 	::continue::
 end
