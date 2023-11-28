@@ -32,14 +32,15 @@ map('n', '<Leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<Leader>fo', ':Telescope oldfiles<CR>', opts)
 map('n', '<Leader>fg', ':Telescope git_files<CR>', opts)
 map('n', '<Leader>fs', ':Telescope live_grep<CR>', opts)
+map('n', '<Leader>fn', ':Telescope notify<CR>', opts)
 
 -- Generic lsp keymaps
 map('n', '<Leader>ls', ':LspStart<CR>', opts)
 map('n', '<Leader>lx', ':LspStop<CR>', opts)
 map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
--- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]])
--- map('n', '<Leader>lf', ':Format<CR>', opts)
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]])
+map('n', '<Leader>lf', ':Format<CR>', opts)
 
 -- Command corrections
 map('c', 'W', 'w', {})

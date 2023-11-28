@@ -15,7 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	'nvim-lua/plenary.nvim', -- Useful lua functions used by lots of plugins
 
-	-- UI related plugins
+	----- UI related plugins
+
 	-- Set of languge parsers for better syntax highlighting
 	{
 		'nvim-treesitter/nvim-treesitter',
@@ -24,6 +25,7 @@ local plugins = {
 		end,
 	},
 
+	-- Colorschemes
 	'tiagovla/tokyodark.nvim',
 	{
 		'catppuccin/nvim',
@@ -40,13 +42,43 @@ local plugins = {
 	'sainnhe/everforest',
 	'shaunsingh/nord.nvim',
 	'kyazdani42/nvim-web-devicons',
-	
-    {
-        'nvim-lualine/lualine.nvim',
-        config = function()
-            require('ui.lualine')
-        end,
-    },
+
+	-- Statusline at the bottom
+	{
+		'nvim-lualine/lualine.nvim',
+		config = function()
+			require('ui.lualine')
+		end,
+	},
+
+	-- Nice looking notifications at the top left
+	{
+		'rcarriga/nvim-notify',
+		config = function()
+			local notify = require('notify')
+			notify.setup({
+				background_colour = '#000000',
+			})
+			vim.notify = notify
+		end,
+	},
+	{
+		'mrded/nvim-lsp-notify',
+		event = 'LspAttach',
+		config = function()
+			require('lsp-notify').setup({})
+		end,
+	},
+
+	-- Highlighting todo comments
+	{
+		'folke/todo-comments.nvim',
+        event = 'VeryLazy',
+		opt = true,
+		opts = {},
+	},
+
+	----- Little useful utils
 
 	-- Code commenter
 	{
@@ -81,42 +113,13 @@ local plugins = {
 		end,
 	},
 
-	-- Formatting support
-	{
-		'stevearc/conform.nvim',
-		event = 'BufWritePre',
-		cmd = { 'ConformInfo' },
-		keys = {
-			{
-				'<leader>lf',
-				function()
-					require('conform').format({ async = true, lsp_fallback = true })
-				end,
-				mode = '',
-				desc = 'Format buffer',
-			},
-		},
-		opts = {
-			formatters_by_ft = {
-				lua = { 'stylua' },
-			},
-		},
-	},
+	----- Main text editing stuffs
 
-	-- Diagnostics support
+	-- Formatting and diagnostics support
 	{
-		'mfussenegger/nvim-lint',
+		'nvimtools/none-ls.nvim',
 		config = function()
-            require('diagnostics.diagnostics')
-			require('lint').linters_by_ft = {
-				gitcommit = { 'commitlint' },
-				lua = { 'selene' },
-			}
-			vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
-				callback = function()
-					require('lint').try_lint()
-				end,
-			})
+			require('language_support.none_ls')
 		end,
 	},
 
@@ -129,10 +132,11 @@ local plugins = {
 			'neovim/nvim-lspconfig',
 		},
 		config = function()
-			require('lsp.lsp')
+			require('language_support.lsp')
 		end,
 	},
 
+	-- Autocomplete support
 	{
 		'hrsh7th/nvim-cmp',
 		event = 'InsertEnter',
@@ -146,18 +150,20 @@ local plugins = {
 			'saadparwaiz1/cmp_luasnip',
 		},
 		config = function()
-			require('lsp.cmp')
+			require('language_support.cmp')
 		end,
 	},
 
+	-- Lsp inlayhints
 	{
 		'lvimuser/lsp-inlayhints.nvim',
 		event = 'LspAttach',
 		config = function()
-			require('lsp.inlayhints')
+			require('language_support.inlayhints')
 		end,
 	},
 
+	-- Vscode-like pictograms to neovim built-in lsp
 	'onsails/lspkind.nvim',
 
 	-- Integrated terminal
@@ -173,7 +179,10 @@ local plugins = {
 			persist_size = true,
 		},
 	},
-	-- Git
+
+	----- Git
+
+	-- Git indicators on the signcolumn
 	{
 		'lewis6991/gitsigns.nvim',
 		opt = true,
@@ -193,9 +202,11 @@ local plugins = {
 			},
 		},
 	},
+
+	-- Greatest plugin to ever exist :)
 	'tpope/vim-fugitive',
 
-	-- Debugging
+	----- Debugging support
 	{
 		'mfussenegger/nvim-dap',
 		event = 'VeryLazy',
@@ -209,7 +220,7 @@ local plugins = {
 		ft = 'go',
 	},
 
-	-- Markdown
+	----- Markdown
 	{
 		'iamcco/markdown-preview.nvim',
 		build = function()
@@ -218,13 +229,6 @@ local plugins = {
 		config = function()
 			vim.g.mkdp_echo_preview_url = 1
 		end,
-	},
-
-	-- Highlighting todo comments
-	{
-		'folke/todo-comments.nvim',
-		opt = true,
-		opts = {},
 	},
 }
 
