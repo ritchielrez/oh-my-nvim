@@ -169,16 +169,16 @@ local plugins = {
 			require('language_support.cmp')
 		end,
 	},
-    {
-			'hrsh7th/cmp-nvim-lua',
-            ft = 'lua',
-    },
+	{
+		'hrsh7th/cmp-nvim-lua',
+		ft = 'lua',
+	},
 	{
 		'hrsh7th/cmp-nvim-lsp',
-        event = 'LspAttach',
-        dependencies = {
+		event = 'LspAttach',
+		dependencies = {
 			'hrsh7th/cmp-nvim-lsp-signature-help',
-        }
+		},
 	},
 
 	-- Lsp inlayhints
