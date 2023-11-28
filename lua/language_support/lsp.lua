@@ -1,7 +1,6 @@
--- Calling needed plugins
-local mason_ok, mason = pcall(require, 'mason')
-if not mason_ok then
-	print('Mason.nvim plugin not installed')
+local lspconfig_ok, lspconfig = pcall(require, 'lspconfig')
+if not lspconfig_ok then
+	print('Lspconfig plugin not installed')
 end
 
 local mason_lspconfig_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
@@ -9,26 +8,11 @@ if not mason_lspconfig_ok then
 	print('Mason-lspconfig plugin not installed')
 end
 
-local lspconfig_ok, lspconfig = pcall(require, 'lspconfig')
-if not lspconfig_ok then
-	print('Lspconfig plugin not installed')
-end
-
 local servers = {
 	'lua_ls',
 	'pyright',
 	'clangd',
 }
-
-mason.setup({
-	ui = {
-		icons = {
-			package_installed = require('defaults.icons').ui.Check,
-			package_pending = require('defaults.icons').ui.ChevronRight,
-			package_uninstalled = require('defaults.icons').ui.Close,
-		},
-	},
-})
 
 mason_lspconfig.setup({
 	automatic_installation = false,

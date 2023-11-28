@@ -142,15 +142,18 @@ local plugins = {
 	{
 		'neovim/nvim-lspconfig',
 		cmd = 'LspStart',
-	},
-	{
-		'williamboman/mason.nvim',
-		cmd = { 'Mason', 'MasonInstall', 'MasonUninstall' },
 		dependencies = {
 			'williamboman/mason-lspconfig.nvim',
 		},
 		config = function()
 			require('language_support.lsp')
+		end,
+	},
+	{
+		'williamboman/mason.nvim',
+		cmd = { 'Mason', 'MasonInstall', 'MasonUninstall' },
+		config = function()
+			require('language_support.mason')
 		end,
 	},
 
