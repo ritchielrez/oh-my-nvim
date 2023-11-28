@@ -4,10 +4,14 @@ if not nvim_lint_ok then
 end
 
 local filetypes = { 
+    'c',
+    'cpp',
     'lua'
 }
 
 nvim_lint.linters_by_ft = {
+    c = { 'cpplint' },
+    cpp = { 'cpplint' },
 	lua = { 'selene' },
 }
 
