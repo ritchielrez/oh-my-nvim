@@ -113,7 +113,15 @@ local plugins = {
 		end,
 	},
 
-	----- Main text editing stuffs
+	----- Language support
+
+	-- Set of languge parsers for better syntax highlighting
+	{
+		'nvim-treesitter/nvim-treesitter',
+		config = function()
+			require('language_support.treesitter')
+		end,
+	},
 
 	-- Formatting and diagnostics support
 	{
@@ -149,6 +157,9 @@ local plugins = {
 
 			vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged', 'BufWritePost' }, {
 				callback = function()
+                    vim.notify("Running diagnostics", "info", {
+                        title = plugin_name
+                    })
 					require('lint').try_lint()
 				end,
 			})
