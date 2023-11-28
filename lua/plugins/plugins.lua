@@ -168,7 +168,6 @@ local plugins = {
 	},
 	{
 		'williamboman/mason.nvim',
-		cmd = { 'Mason', 'MasonInstall', 'MasonUninstall' },
 		config = function()
 			require('language_support.mason')
 		end,
