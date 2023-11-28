@@ -85,7 +85,7 @@ for _, server in pairs(servers) do
 	server = vim.split(server, '@')[1]
 
 	if server == 'lua_ls' then
-		local lua_ls_opts = require('lsp.settings.lua_ls')
+		local lua_ls_opts = require('language_support.settings.lua_ls')
 		opts = vim.tbl_deep_extend('force', lua_ls_opts, opts)
 	end
 
