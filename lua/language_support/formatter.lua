@@ -14,6 +14,12 @@ formatter.setup({
 	filetype = {
 		-- Formatter configurations for filetype "lua" go here
 		-- and will be executed in order
+		c = {
+			require('formatter.filetypes.c').clangformat,
+		},
+		cpp = {
+			require('formatter.filetypes.cpp').clangformat,
+		},
 		lua = {
 			-- "formatter.filetypes.lua" defines default configurations for the
 			-- "lua" filetype
