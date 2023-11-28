@@ -118,6 +118,7 @@ local plugins = {
 	-- Formatting and diagnostics support
 	{
 		'mhartington/formatter.nvim',
+		cmd = 'Format',
 		config = function()
 			require('language_support.formatter')
 		end,
@@ -139,11 +140,14 @@ local plugins = {
 
 	-- Language server protocol support
 	{
+		'neovim/nvim-lspconfig',
+		cmd = 'LspStart',
+	},
+	{
 		'williamboman/mason.nvim',
-		event = 'VeryLazy',
+		cmd = { 'Mason', 'MasonInstall', 'MasonUninstall' },
 		dependencies = {
 			'williamboman/mason-lspconfig.nvim',
-			'neovim/nvim-lspconfig',
 		},
 		config = function()
 			require('language_support.lsp')
@@ -155,17 +159,26 @@ local plugins = {
 		'hrsh7th/nvim-cmp',
 		event = 'InsertEnter',
 		dependencies = {
-			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-nvim-lua',
-			'hrsh7th/cmp-nvim-lsp-signature-help',
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip',
+			'onsails/lspkind.nvim',
 		},
 		config = function()
 			require('language_support.cmp')
 		end,
+	},
+    {
+			'hrsh7th/cmp-nvim-lua',
+            ft = 'lua',
+    },
+	{
+		'hrsh7th/cmp-nvim-lsp',
+        event = 'LspAttach',
+        dependencies = {
+			'hrsh7th/cmp-nvim-lsp-signature-help',
+        }
 	},
 
 	-- Lsp inlayhints
@@ -176,9 +189,6 @@ local plugins = {
 			require('language_support.inlayhints')
 		end,
 	},
-
-	-- Vscode-like pictograms to neovim built-in lsp
-	'onsails/lspkind.nvim',
 
 	-- Integrated terminal
 	{
@@ -248,7 +258,7 @@ local plugins = {
 
 local opts = {
 	install = {
-		colorscheme = { 'default' },
+		colorscheme = { 'torte' },
 	},
 }
 
