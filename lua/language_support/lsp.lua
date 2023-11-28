@@ -50,7 +50,7 @@ local function lsp_config()
 	})
 end
 
-local function lsp_keymaps(bufnr)
+local function lsp_keymaps(bufnr, lsp_format)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>Telescope lsp_declarations<CR>', opts)
@@ -59,19 +59,30 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+
+	if lsp_format then
+		vim.keymap.set('n', '<leader>lf', 'lua vim.lsp.buf.format({range = nil})<CR>', opts)
+		vim.keymap.set('v', '<leader>lf', 'lua vim.lsp.buf.format()<CR>', opts)
+	end
 end
 
 local function on_attach(client, bufnr)
 	lsp_config()
-	lsp_keymaps(bufnr)
+
+	local lsp_format = true
 
 	if client.name == 'lua_ls' then
 		client.server_capabilities.document_formatting = false
+		lsp_format = false
 	end
 
 	if client.name == 'gopls' then
 		client.server_capabilities.document_formatting = false
+		lsp_format = false
 	end
+
+	lsp_keymaps(bufnr, lsp_format)
 end
 
 for _, server in pairs(servers) do

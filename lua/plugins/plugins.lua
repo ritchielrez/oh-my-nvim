@@ -73,7 +73,7 @@ local plugins = {
 	-- Highlighting todo comments
 	{
 		'folke/todo-comments.nvim',
-        event = 'VeryLazy',
+		event = 'VeryLazy',
 		opt = true,
 		opts = {},
 	},
@@ -117,10 +117,24 @@ local plugins = {
 
 	-- Formatting and diagnostics support
 	{
-		'nvimtools/none-ls.nvim',
+		'mhartington/formatter.nvim',
 		config = function()
-			require('language_support.none_ls')
+			require('language_support.formatter')
 		end,
+		keys = {
+			{
+				'<leader>lf',
+				':Format<CR>',
+				mode = 'n',
+				desc = 'Format file',
+			},
+			{
+				'<leader>lf',
+				':Format<CR>',
+				mode = 'v',
+				desc = 'Format block',
+			},
+		},
 	},
 
 	-- Language server protocol support
