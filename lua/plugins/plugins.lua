@@ -43,7 +43,7 @@ local plugins = {
 		end,
 	},
 
-	-- Nice looking notifications at the top left
+	-- Nice looking notifications at top left
 	{
 		'rcarriga/nvim-notify',
 		config = function()
