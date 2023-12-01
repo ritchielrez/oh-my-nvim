@@ -35,6 +35,15 @@ local plugins = {
 	'shaunsingh/nord.nvim',
 	'kyazdani42/nvim-web-devicons',
 
+	-- Dashboard at startup
+	{
+		'goolord/alpha-nvim',
+        event = 'VimEnter',
+		config = function()
+			require('alpha').setup(require('alpha.themes.startify').config)
+		end,
+	},
+
 	-- Statusline at the bottom
 	{
 		'nvim-lualine/lualine.nvim',
@@ -89,7 +98,7 @@ local plugins = {
 	-- Fuzzy text searcher
 	{
 		'nvim-telescope/telescope.nvim',
-		event = 'VeryLazy',
+        cmd = { 'Telescope' },
 		dependencies = {
 			'nvim-telescope/telescope-project.nvim',
 			'nvim-telescope/telescope-ui-select.nvim',
@@ -141,7 +150,7 @@ local plugins = {
 	{
 		'mfussenegger/nvim-lint',
 		config = function()
-            require('language_support.nvim_lint')
+			require('language_support.nvim_lint')
 		end,
 	},
 
@@ -237,12 +246,15 @@ local plugins = {
 	},
 
 	-- Greatest plugin to ever exist :)
-	'tpope/vim-fugitive',
+	{
+		'tpope/vim-fugitive',
+		cmd = 'Git',
+	},
 
 	----- Debugging support
 	{
 		'mfussenegger/nvim-dap',
-		event = 'VeryLazy',
+		ft = { 'c', 'cpp', 'go' },
 		dependencies = 'rcarriga/nvim-dap-ui',
 		config = function()
 			require('dap.dapui')
