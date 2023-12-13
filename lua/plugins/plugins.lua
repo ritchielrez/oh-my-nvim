@@ -286,10 +286,6 @@ local plugins = {
 	},
 }
 
-local opts = {
-	install = {
-		colorscheme = { 'torte' },
-	},
-}
+local opts = {}
 
 require('lazy').setup(plugins, opts)
