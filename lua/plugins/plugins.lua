@@ -79,6 +79,13 @@ local plugins = {
 		opts = {},
 	},
 
+    -- Highlighting color codes
+    {
+        'NvChad/nvim-colorizer.lua',
+        event = 'BufRead',
+        opts = {},
+    },
+
 	----- Little useful utils
 
 	-- Code commenter
