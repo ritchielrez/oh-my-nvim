@@ -93,6 +93,7 @@ A list of things that you need to have in your system in order to use this proje
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+<img src="Usage_screenshot.png">
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
