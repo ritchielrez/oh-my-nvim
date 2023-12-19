@@ -142,7 +142,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Thanks to all of this projects for helping me to make this config better.
 
-* [README](https://github.com/othneildrew/Best-README-Template)
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 * [init.lua](https://github.com/ThePrimeagen/init.lua)
 * [Lunarvim](https://github.com/lunarvim/lunarvim)
 * [MIT License](https://choosealicense.com/licenses/mit/)
