@@ -48,7 +48,7 @@
 
 There are many **neovim distrobutions (custom configs made by others)** avalaible for anyone use to out there. Those are **great**, because often they are made by those 
 who **know** more about **neovim** and **understand** the way the editor works **better** than the rest. If you don't want to have the **burden** of maintaining a config 
-it is fine to use a **premade config**, but for me I always liked **configuring** something myself, only getting **inspired (copying XD)** from others when I don't want 
+it is fine to use a **premade config**, but for me I always liked **configuring** something by myself, only getting **inspired (copying XD)** from others when I don't want 
 to spend time on something or something is really **confusing**. This **neovim config** is made myself for **myself**, but there are a lot of things that are in the config 
 that I took from **other people's config**, yet I am really **proud of my neovim config**. Because there are things that I learned while making this config, and I will 
 continue to learn. **Neovim** for me is not just an **editor**, but also something that I can **control** and **make** it work how I **want** it to work.
