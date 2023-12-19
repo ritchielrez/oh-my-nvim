@@ -140,7 +140,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Thanks to all of this projects for helping me to make this config better.
+Thanks to all of this projects for helping me to make this project better.
 
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 * [init.lua](https://github.com/ThePrimeagen/init.lua)
