@@ -74,14 +74,15 @@ A list of things that you need to have in your system in order to use this proje
 1. Create a **backup** of your current **neovim config (if you have one)** somewhere else
 2. **Clone** the repo
 
-**Linux / Mac**
+   **Linux / Mac**
    ```sh
    git clone https://github.com/ritchielrez/oh-my-nvim ~/.config/nvim/
    ```  
-**Windows (in powershell)**
-  ```pwsh
+   **Windows (in powershell)**
+   ```pwsh
    git clone https://github.com/ritchielrez/oh-my-nvim ~/AppData/Local/nvim
-  ```
+   ```
+
 3. Start up **neovim**
    ```sh
    nvim
