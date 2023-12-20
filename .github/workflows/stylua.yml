@@ -1,2 +1,20 @@
-- name: StyLua
-  uses: JohnnyMorganz/stylua-action@v3.0.0
+---
+name: Stylua
+on:
+  pull_request: ~
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Format project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Format project
+        uses: JohnnyMorganz/stylua-action@v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
