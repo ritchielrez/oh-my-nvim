@@ -3,30 +3,32 @@ if not nvim_lint_ok then
 	print('Nvim-lint plugin not installed')
 end
 
-local filetypes = { 
-    'c',
-    'cpp',
-    'lua'
+local filetypes = {
+	'c',
+	'cpp',
+	'lua',
+	'yaml',
 }
 
 nvim_lint.linters_by_ft = {
-    c = { 'cpplint' },
-    cpp = { 'cpplint' },
+	c = { 'cpplint' },
+	cpp = { 'cpplint' },
 	lua = { 'selene' },
+	yaml = { 'yamllint' },
 }
 
 local plugin_name = 'nvim-lint'
 
 vim.api.nvim_create_autocmd({ 'BufRead' }, {
 	callback = function()
-        for _, filetype in pairs(filetypes) do
-		if vim.bo.filetype == filetype then
-			vim.notify('Running diagnostics', 'info', {
-				title = plugin_name,
-				timeout = 500,
-			})
+		for _, filetype in pairs(filetypes) do
+			if vim.bo.filetype == filetype then
+				vim.notify('Running diagnostics', 'info', {
+					title = plugin_name,
+					timeout = 500,
+				})
+			end
 		end
-    end
 	end,
 })
 vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged', 'BufWritePost' }, {

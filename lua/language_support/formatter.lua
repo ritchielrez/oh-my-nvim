@@ -20,9 +20,9 @@ formatter.setup({
 		cpp = {
 			require('formatter.filetypes.cpp').clangformat,
 		},
-        go = {
+		go = {
 			require('formatter.filetypes.go').goimports,
-        },
+		},
 		lua = {
 			-- "formatter.filetypes.lua" defines default configurations for the
 			-- "lua" filetype
