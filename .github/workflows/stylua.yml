@@ -2,10 +2,14 @@
 name: Stylua
 on:
   pull_request:
+    paths:
+      - 'lua/**'
+      - 'after/**'
+      - 'ftplugin/**'
   push:
 
 jobs:
-  build:
+  format:
     name: Format project
     runs-on: ubuntu-latest
 
@@ -15,6 +19,6 @@ jobs:
         uses: JohnnyMorganz/stylua-action@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          version: v0.18.0
+          version: 0.18.0
           # CLI arguments
           args: --check .
