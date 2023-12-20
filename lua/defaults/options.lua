@@ -35,8 +35,8 @@ set.lazyredraw = true
 
 set.fsync = false
 
-set.list = true
-set.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
+set.list = false
+-- set.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
 
 set.clipboard = 'unnamedplus'
 
