@@ -255,7 +255,7 @@ local plugins = {
 	-- Greatest plugin to ever exist :)
 	{
 		'tpope/vim-fugitive',
-		cmd = 'Git',
+		cmd = 'Git', 'Gwrite',
 	},
 
 	----- Debugging support
