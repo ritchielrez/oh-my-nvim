@@ -6,6 +6,7 @@ end
 local filetypes = {
 	'c',
 	'cpp',
+	'go',
 	'lua',
 	'yaml',
 }
@@ -13,6 +14,7 @@ local filetypes = {
 nvim_lint.linters_by_ft = {
 	c = { 'cpplint' },
 	cpp = { 'cpplint' },
+	go = { 'golangcilint' },
 	lua = { 'selene' },
 	yaml = { 'yamllint' },
 }
