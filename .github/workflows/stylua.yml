@@ -16,5 +16,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Format project
         uses: JohnnyMorganz/stylua-action@v3.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          # CLI arguments
+          args: --check .
