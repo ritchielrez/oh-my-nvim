@@ -15,8 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Format project
-        uses: actions/checkout@v4
-        uses: JohnnyMorganz/stylua-action@v3.0.0
+        uses: JohnnyMorganz/stylua-action@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: v0.18.0
