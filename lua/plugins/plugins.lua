@@ -38,7 +38,7 @@ local plugins = {
 	-- Dashboard at startup
 	{
 		'goolord/alpha-nvim',
-        event = 'VimEnter',
+		event = 'VimEnter',
 		config = function()
 			require('alpha').setup(require('alpha.themes.dashboard').config)
 		end,
@@ -79,12 +79,12 @@ local plugins = {
 		opts = {},
 	},
 
-    -- Highlighting color codes
-    {
-        'NvChad/nvim-colorizer.lua',
-        event = 'BufRead',
-        opts = {},
-    },
+	-- Highlighting color codes
+	{
+		'NvChad/nvim-colorizer.lua',
+		event = 'BufRead',
+		opts = {},
+	},
 
 	----- Little useful utils
 
@@ -105,7 +105,7 @@ local plugins = {
 	-- Fuzzy text searcher
 	{
 		'nvim-telescope/telescope.nvim',
-        cmd = { 'Telescope' },
+		cmd = { 'Telescope' },
 		dependencies = {
 			'nvim-telescope/telescope-project.nvim',
 			'nvim-telescope/telescope-ui-select.nvim',
@@ -255,7 +255,8 @@ local plugins = {
 	-- Greatest plugin to ever exist :)
 	{
 		'tpope/vim-fugitive',
-		cmd = 'Git', 'Gwrite',
+		cmd = 'Git',
+		'Gwrite',
 	},
 
 	----- Debugging support
