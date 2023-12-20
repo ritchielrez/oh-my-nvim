@@ -20,6 +20,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#showcase">Showcase</a></li>
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
@@ -30,13 +31,20 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Showcase
+
+<img src="Showcase_screenshot.png">
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -85,14 +93,6 @@ A list of things that you need to have in your system in order to use this proje
    nvim
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-<img src="Usage_screenshot.png">
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
