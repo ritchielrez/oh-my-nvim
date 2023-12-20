@@ -21,7 +21,7 @@ formatter.setup({
 			require('formatter.filetypes.cpp').clangformat,
 		},
 		go = {
-			require('formatter.filetypes.go').goimports,
+			require('formatter.filetypes.go').golines,
 		},
 		lua = {
 			-- "formatter.filetypes.lua" defines default configurations for the
