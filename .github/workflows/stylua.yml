@@ -9,8 +9,8 @@ on:
   push:
 
 jobs:
-  stylua-check:
-    name: Check formatting
+  stylua:
+    name: Format project
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +21,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: 0.18.0
           # CLI arguments
-          args: --check .
+          args: .
