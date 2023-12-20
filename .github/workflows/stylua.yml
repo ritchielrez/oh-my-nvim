@@ -10,15 +10,15 @@ on:
 
 jobs:
   stylua:
-    name: Format project
+    name: Check formatting
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-      - name: Format project
+      - name: Check formatting
         uses: JohnnyMorganz/stylua-action@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: 0.18.0
           # CLI arguments
-          args: .
+          args: --check .
