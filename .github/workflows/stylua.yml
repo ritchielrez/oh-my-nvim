@@ -1,3 +1,4 @@
+- uses: actions/checkout@v4
 - uses: JohnnyMorganz/stylua-action@v3
   with:
     token: ${{ secrets.GITHUB_TOKEN }}
