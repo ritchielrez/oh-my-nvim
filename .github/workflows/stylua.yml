@@ -9,8 +9,8 @@ on:
   push:
 
 jobs:
-  format:
-    name: Format project
+  stylua-check:
+    name: Check formatting
     runs-on: ubuntu-latest
 
     steps:
