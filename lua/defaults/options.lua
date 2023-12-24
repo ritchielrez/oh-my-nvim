@@ -4,6 +4,7 @@ local let = vim.g
 -- use :help to know about these options
 
 set.number = true
+set.relativenumber = true
 
 set.tabstop = 4
 set.softtabstop = 4
