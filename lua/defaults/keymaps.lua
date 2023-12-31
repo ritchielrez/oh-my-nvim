@@ -38,6 +38,10 @@ map('n', '<Leader>fn', ':Telescope notify<CR>', opts)
 map('n', '<Leader>ls', ':LspStart<CR>', opts)
 map('n', '<Leader>lx', ':LspStop<CR>', opts)
 
+-- Formatter.nvim keymaps
+map('n', '<Leader>lf', ':Format<CR>', opts)
+map('v', '<Leader>lf', ':Format<CR>', opts)
+
 -- Command corrections
 map('c', 'W', 'w', {})
 map('c', 'Wq', 'wq', {})

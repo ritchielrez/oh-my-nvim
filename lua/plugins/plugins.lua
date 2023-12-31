@@ -138,20 +138,6 @@ local plugins = {
 		config = function()
 			require('language_support.formatter')
 		end,
-		keys = {
-			{
-				'<leader>lf',
-				':Format<CR>',
-				mode = 'n',
-				desc = 'Format file',
-			},
-			{
-				'<leader>lf',
-				':Format<CR>',
-				mode = 'v',
-				desc = 'Format block',
-			},
-		},
 	},
 
 	{
