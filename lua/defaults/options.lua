@@ -30,7 +30,7 @@ set.laststatus = 3
 
 set.smartindent = true
 
-set.wrap = false
+set.wrap = true
 
 set.lazyredraw = true
 
@@ -57,4 +57,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- vim.o.shell = 'bash'
 -- vim.o.shellcmdflag = '-s'
-vim.o.guifont = 'CaskaydiaCove Nerd Font:h12'
+vim.o.guifont = 'FiraCode Nerd Font:h12'
