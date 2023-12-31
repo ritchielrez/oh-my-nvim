@@ -3,8 +3,6 @@ if not formatter_ok then
 	print('Formatter.nvim plugin not installed')
 end
 
-local util = require('formatter.util')
-
 formatter.setup({
 	-- Enable or disable logging
 	logging = true,
@@ -24,22 +22,23 @@ formatter.setup({
 			require('formatter.filetypes.go').golines,
 		},
 		lua = {
-			-- "formatter.filetypes.lua" defines default configurations for the
-			-- "lua" filetype
-			function()
-				-- Supports conditional formatting
-				if util.get_current_buffer_file_name() == 'special.lua' then
-					return nil
-				end
-
-				-- Full specification of configurations is down below and in Vim help
-				-- files
-				return {
-					exe = 'stylua',
-					args = {},
-					stdin = false,
-				}
-			end,
+			-- -- "formatter.filetypes.lua" defines default configurations for the
+			-- -- "lua" filetype
+			-- function()
+			-- 	-- Supports conditional formatting
+			-- 	-- if util.get_current_buffer_file_name() == 'special.lua' then
+			-- 	-- 	return nil
+			-- 	-- end
+			--
+			-- 	-- Full specification of configurations is down below and in Vim help
+			-- 	-- files
+			-- 	return {
+			-- 		exe = 'stylua',
+			-- 		args = {},
+			-- 		stdin = false,
+			-- 	}
+			-- end,
+			require('formatter.filetypes.lua').stylua,
 		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
