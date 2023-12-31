@@ -30,7 +30,7 @@ set.laststatus = 3
 
 set.smartindent = true
 
-set.wrap = true
+set.wrap = false
 
 set.lazyredraw = true
 
