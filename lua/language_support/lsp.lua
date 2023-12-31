@@ -9,6 +9,7 @@ if not mason_lspconfig_ok then
 end
 
 local servers = {
+	'gopls',
 	'lua_ls',
 	'pyright',
 	'clangd',
