@@ -6,6 +6,8 @@ local let = vim.g
 set.number = true
 set.relativenumber = true
 
+set.linespace = 4
+
 set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
