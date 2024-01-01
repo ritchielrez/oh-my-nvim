@@ -2,8 +2,6 @@ local transparent_background = false
 
 if not vim.g.neovide then
 	transparent_background = true
-	vim.g.gruvbox_material_transparent_background = 2
-	vim.g.everforest_transparent_background = 1
 end
 
 vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
@@ -21,7 +19,7 @@ catppuccin.setup({
 		percentage = 0.15,
 	},
 	transparent_background = transparent_background,
-	term_colors = false,
+	term_colors = true,
 	compile = {
 		enabled = false,
 		path = vim.fn.stdpath('cache') .. '/catppuccin',
