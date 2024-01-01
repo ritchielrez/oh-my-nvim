@@ -60,3 +60,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.o.shell = 'bash'
 -- vim.o.shellcmdflag = '-s'
 vim.o.guifont = 'FiraCode Nerd Font:h12'
+
+vim.g.neovide_padding_top = 20
+vim.g.neovide_padding_bottom = 20
+vim.g.neovide_padding_right = 20
+vim.g.neovide_padding_left = 20
