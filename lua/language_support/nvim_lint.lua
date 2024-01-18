@@ -9,8 +9,6 @@ local filetypes = {
 	'go',
 	'lua',
 	'yaml',
-	'javscript',
-	'typescript',
 }
 
 nvim_lint.linters_by_ft = {
@@ -19,8 +17,6 @@ nvim_lint.linters_by_ft = {
 	go = { 'golangcilint' },
 	lua = { 'selene' },
 	yaml = { 'yamllint' },
-	javscript = { 'eslint_d' },
-	typescript = { 'eslint_d' },
 }
 
 local plugin_name = 'nvim-lint'
