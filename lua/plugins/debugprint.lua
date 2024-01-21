@@ -36,3 +36,5 @@ vim.keymap.set('n', '<leader>do', function()
 end, {
 	expr = true,
 })
+
+vim.keymap.set('n', '<leader>dd', '<cmd>DeleteDebugPrints<cr>', {})
