@@ -258,6 +258,14 @@ local plugins = {
 		'leoluz/nvim-dap-go',
 		ft = 'go',
 	},
+	{
+		'andrewferrier/debugprint.nvim',
+		opt = true,
+		config = function()
+			require('plugins.debugprint')
+		end,
+		version = '*',
+	},
 
 	----- Markdown
 	{
