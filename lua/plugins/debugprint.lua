@@ -14,23 +14,23 @@ vim.keymap.set('n', '<leader>dp', function()
 end, {
 	expr = true,
 })
-vim.keymap.set('n', '<Leader>Dp', function()
+vim.keymap.set('n', '<leader>Dp', function()
 	-- Note: setting `expr=true` and returning the value are essential
 	return require('debugprint').debugprint({ above = true })
 end, {
 	expr = true,
 })
-vim.keymap.set('n', '<Leader>dq', function()
+vim.keymap.set('n', '<leader>dq', function()
 	return require('debugprint').debugprint({ variable = true })
 end, {
 	expr = true,
 })
-vim.keymap.set('n', '<Leader>Dq', function()
+vim.keymap.set('n', '<leader>Dq', function()
 	return require('debugprint').debugprint({ above = true, variable = true })
 end, {
 	expr = true,
 })
-vim.keymap.set('n', '<Leader>do', function()
+vim.keymap.set('n', '<leader>do', function()
 	-- It's also important to use motion = true for operator-pending motions
 	return require('debugprint').debugprint({ motion = true })
 end, {
