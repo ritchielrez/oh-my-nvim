@@ -10,4 +10,7 @@ configs.setup({
 		disable = { '' }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = false,
 	},
+	autotag = {
+		enable = true,
+	},
 })
