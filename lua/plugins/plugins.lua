@@ -71,6 +71,30 @@ local plugins = {
 		end,
 	},
 
+	-- File tree for neovim
+	{
+		'nvim-neo-tree/neo-tree.nvim',
+		branch = 'v3.x',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+			'MunifTanjim/nui.nvim',
+		},
+		cmd = { 'Neotree' },
+		config = function()
+			require('neo-tree').setup({
+				window = {
+					mappings = {
+						['gu'] = 'git_unstage_file',
+						['ga'] = 'git_add_file',
+						['gr'] = 'git_revert_file',
+						['gc'] = 'git_commit',
+					},
+				},
+			})
+		end,
+	},
+
 	-- Highlighting todo comments
 	{
 		'folke/todo-comments.nvim',
@@ -262,7 +286,7 @@ local plugins = {
 	{
 		'brianhuster/live-preview.nvim',
 		ft = 'markdown',
-        opts = {},
+		opts = {},
 	},
 
 	-- A beautiful undo tree view
@@ -329,6 +353,8 @@ local opts = {
 				'tohtml',
 				'tutor',
 				'zipPlugin',
+				'netrw',
+				'netrwPlugin',
 			},
 		},
 	},
