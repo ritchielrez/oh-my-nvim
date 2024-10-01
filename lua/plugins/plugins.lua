@@ -88,7 +88,6 @@ local plugins = {
 						['gu'] = 'git_unstage_file',
 						['ga'] = 'git_add_file',
 						['gr'] = 'git_revert_file',
-						['gc'] = 'git_commit',
 					},
 				},
 			})
