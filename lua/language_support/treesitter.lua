@@ -5,6 +5,8 @@ if not treesitter_ok then
 end
 
 configs.setup({
+	ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline' },
+	sync_installed = false,
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { '' }, -- list of language that will be disabled
