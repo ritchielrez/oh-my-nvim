@@ -209,13 +209,23 @@ local plugins = {
 		'akinsho/toggleterm.nvim',
 		event = 'VeryLazy',
 		version = '*',
-		opts = {
-			open_mapping = [[<c-\>]],
-			terminal_mappings = true,
-			normal_mappings = true,
-			insert_mappings = true,
-			persist_size = true,
-		},
+		config = function()
+			require('toggleterm').setup({
+				size = function(term)
+					if term.direction == 'vertical' then
+						return vim.o.columns * 0.4
+					else
+						return 20
+					end
+				end,
+				open_mapping = [[<c-\>]],
+				terminal_mappings = true,
+				normal_mappings = true,
+				insert_mappings = true,
+				persist_size = true,
+				direction = 'vertical',
+			})
+		end,
 	},
 
 	-- Integrated file manager

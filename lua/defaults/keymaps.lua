@@ -21,7 +21,7 @@ map('n', '<Down>', ':resize +2<CR>', opts)
 map('n', '<Left>', ':vertical resize -2<CR>', opts)
 map('n', '<Right>', ':vertical resize +2<CR>', opts)
 
-map('n', '<Leader>e', ':Neotree toggle<CR>', opts)
+map('n', '<Leader>e', ':Lf<CR>', opts)
 
 -- Apply the currently changed config
 map('n', '<Leader>so', ':luafile %<CR>', opts)
