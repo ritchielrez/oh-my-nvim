@@ -71,29 +71,6 @@ local plugins = {
 		end,
 	},
 
-	-- File tree for neovim
-	{
-		'nvim-neo-tree/neo-tree.nvim',
-		branch = 'v3.x',
-		dependencies = {
-			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-			'MunifTanjim/nui.nvim',
-		},
-		cmd = { 'Neotree' },
-		config = function()
-			require('neo-tree').setup({
-				window = {
-					mappings = {
-						['gu'] = 'git_unstage_file',
-						['ga'] = 'git_add_file',
-						['gr'] = 'git_revert_file',
-					},
-				},
-			})
-		end,
-	},
-
 	-- Highlighting todo comments
 	{
 		'folke/todo-comments.nvim',
@@ -241,6 +218,48 @@ local plugins = {
 		},
 	},
 
+	-- Integrated file manager
+	{
+		'is0n/fm-nvim',
+		config = function()
+			require('fm-nvim').setup({
+				-- (Vim) Command used to open files
+				edit_cmd = 'edit',
+				on_close = {},
+				on_open = {},
+				-- UI Options
+				ui = {
+					default = 'float',
+					float = {
+						-- Floating window border (see ':h nvim_open_win')
+						border = 'none',
+						-- Highlight group for floating window/border (see ':h winhl')
+						float_hl = 'Normal',
+						border_hl = 'FloatBorder',
+						-- Floating Window Transparency (see ':h winblend')
+						blend = 0,
+						-- Num from 0 - 1 for measurements
+						height = 0.8,
+						width = 0.8,
+						-- X and Y Axis of Window
+						x = 0.5,
+						y = 0.5,
+					},
+				},
+				-- Terminal commands used w/ file manager (have to be in your $PATH)
+				cmds = {
+					lf_cmd = 'lf',
+				},
+				-- Mappings used with the plugin
+				mappings = {
+					vert_split = '<C-v>',
+					horz_split = '<C-h>',
+					tabedit = '<C-t>',
+					ESC = 'q',
+				},
+			})
+		end,
+	},
 	----- Git
 
 	-- Git indicators on the signcolumn
