@@ -12,8 +12,8 @@ local filetypes = {
 }
 
 nvim_lint.linters_by_ft = {
-	c = { 'cpplint' },
-	cpp = { 'cpplint' },
+	-- c = { 'cpplint' },
+	-- cpp = { 'cpplint' },
 	go = { 'golangcilint' },
 	lua = { 'selene' },
 	yaml = { 'yamllint' },
