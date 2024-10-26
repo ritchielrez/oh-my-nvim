@@ -220,7 +220,12 @@ local plugins = {
 				normal_mappings = true,
 				insert_mappings = true,
 				persist_size = true,
-				direction = 'vertical',
+				direction = 'float',
+				float_opts = {
+					border = 'rounded',
+					height = 30,
+					width = 150,
+				},
 			})
 		end,
 	},
