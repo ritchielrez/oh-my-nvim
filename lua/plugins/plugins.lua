@@ -126,9 +126,6 @@ local plugins = {
 	-- Set of languge parsers for better syntax highlighting
 	{
 		'nvim-treesitter/nvim-treesitter',
-		dependencies = {
-			'windwp/nvim-ts-autotag',
-		},
 		config = function()
 			require('language_support.treesitter')
 		end,
