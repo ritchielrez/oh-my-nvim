@@ -52,25 +52,6 @@ local plugins = {
 		end,
 	},
 
-	-- Nice looking notifications at top left
-	{
-		'rcarriga/nvim-notify',
-		config = function()
-			local notify = require('notify')
-			notify.setup({
-				background_colour = '#000000',
-			})
-			vim.notify = notify
-		end,
-	},
-	{
-		'mrded/nvim-lsp-notify',
-		event = 'LspAttach',
-		config = function()
-			require('lsp-notify').setup({})
-		end,
-	},
-
 	-- Highlighting todo comments
 	{
 		'folke/todo-comments.nvim',
