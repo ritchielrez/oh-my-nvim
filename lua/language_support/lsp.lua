@@ -23,13 +23,13 @@ local opt = {}
 
 local function lsp_config()
 	vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = 'none',
+		border = 'single',
 		-- width = 60,
 		-- height = 30,
 	})
 
 	vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = 'none',
+		border = 'single',
 		-- width = 60,
 		-- height = 30,
 	})
