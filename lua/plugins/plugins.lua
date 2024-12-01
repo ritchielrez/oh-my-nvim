@@ -22,16 +22,16 @@ local plugins = {
 	{
 		'catppuccin/nvim',
 		name = 'catppuccin',
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			require('ui.catppuccin')
 		end,
 	},
+	'sainnhe/gruvbox-material',
 	{
-		'sainnhe/gruvbox-material',
+		'sainnhe/everforest',
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
 	},
-	'sainnhe/everforest',
 	'shaunsingh/nord.nvim',
 	'kyazdani42/nvim-web-devicons',
 

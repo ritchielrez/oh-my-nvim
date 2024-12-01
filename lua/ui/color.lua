@@ -1,2 +1,2 @@
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('catppuccin')
+vim.cmd.colorscheme('everforest')
