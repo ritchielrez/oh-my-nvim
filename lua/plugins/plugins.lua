@@ -29,22 +29,11 @@ local plugins = {
 		end,
 	},
 	'sainnhe/gruvbox-material',
-	{
-		'sainnhe/everforest',
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-	},
+	'sainnhe/everforest',
 	'shaunsingh/nord.nvim',
-	'kyazdani42/nvim-web-devicons',
 
-	-- Dashboard at startup
-	{
-		'goolord/alpha-nvim',
-		event = 'VimEnter',
-		config = function()
-			require('alpha').setup(require('plugins.alpha').config)
-		end,
-	},
+  -- Fancy Icons
+	'kyazdani42/nvim-web-devicons',
 
 	-- Statusline at the bottom
 	{
