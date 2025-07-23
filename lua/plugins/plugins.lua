@@ -53,7 +53,7 @@ local plugins = {
 
 	-- Highlighting color codes
 	{
-		'NvChad/nvim-colorizer.lua',
+		'catgoose/nvim-colorizer.lua',
 		event = 'BufRead',
 		opts = {},
 	},
