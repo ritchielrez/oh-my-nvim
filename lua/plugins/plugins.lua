@@ -163,35 +163,6 @@ local plugins = {
 		},
 	},
 
-	-- Integrated terminal
-	{
-		'akinsho/toggleterm.nvim',
-		event = 'VeryLazy',
-		version = '*',
-		config = function()
-			require('toggleterm').setup({
-				size = function(term)
-					if term.direction == 'vertical' then
-						return vim.o.columns * 0.4
-					else
-						return 20
-					end
-				end,
-				open_mapping = [[<c-\>]],
-				terminal_mappings = true,
-				normal_mappings = true,
-				insert_mappings = true,
-				persist_size = true,
-				direction = 'float',
-				float_opts = {
-					border = 'rounded',
-					height = 30,
-					width = 150,
-				},
-			})
-		end,
-	},
-
 	----- Git
 	-- Git indicators on the signcolumn
 	{
