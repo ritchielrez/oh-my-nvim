@@ -14,6 +14,8 @@ local servers = {
 	'pyright',
 	'clangd',
 	'rust_analyzer',
+	'vtsls',
+	'jsonls',
 }
 
 mason_lspconfig.setup({

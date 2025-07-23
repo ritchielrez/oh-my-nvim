@@ -64,6 +64,7 @@ map('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+
 -- Quickfix
 map('n', '<leader>co', ':copen<CR>', opts)
 map('n', '<leader>cx', ':cclose<CR>', opts)

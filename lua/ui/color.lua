@@ -1,3 +1,2 @@
-require('ui.everforest')
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('catppuccin')
