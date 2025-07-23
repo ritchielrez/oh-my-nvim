@@ -82,6 +82,12 @@ telescope.setup({
 			-- the default case_mode is "smart_case"
 		},
 	},
+	pickers = {
+		find_files = { previewer = false },
+		oldfiles = { previewer = false },
+		git_files = { previewer = false },
+		live_grep = { previewer = true},
+	},
 })
 telescope.load_extension('ui-select')
 telescope.load_extension('fzf')
