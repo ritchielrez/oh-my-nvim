@@ -18,6 +18,12 @@ formatter.setup({
 		cpp = {
 			require('formatter.filetypes.cpp').clangformat,
 		},
+		css = {
+			require('formatter.filetypes.css').prettierd,
+		},
+		html = {
+			require('formatter.filetypes.html').prettierd,
+		},
 		go = {
 			require('formatter.filetypes.go').golines,
 		},
@@ -39,6 +45,18 @@ formatter.setup({
 			-- 	}
 			-- end,
 			require('formatter.filetypes.lua').stylua,
+		},
+		javasript = {
+			require('formatter.filetypes.javascript').prettierd,
+		},
+		javascriptreact = {
+			require('formatter.filetypes.javascriptreact').prettierd,
+		},
+		typescript = {
+			require('formatter.filetypes.typescript').prettierd,
+		},
+		typescriptreact = {
+			require('formatter.filetypes.typescriptreact').prettierd,
 		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
