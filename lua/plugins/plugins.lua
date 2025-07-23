@@ -163,15 +163,6 @@ local plugins = {
 		},
 	},
 
-	-- Lsp inlayhints
-	{
-		'lvimuser/lsp-inlayhints.nvim',
-		event = 'LspAttach',
-		config = function()
-			require('language_support.inlayhints')
-		end,
-	},
-
 	-- Integrated terminal
 	{
 		'akinsho/toggleterm.nvim',
