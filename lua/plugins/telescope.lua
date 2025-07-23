@@ -7,16 +7,16 @@ local actions = require('telescope.actions')
 
 telescope.setup({
 	defaults = {
-		prompt_prefix = require('defaults.icons').ui.Telescope .. ' ',
-		sorting_strategy = 'ascending',
-		selection_caret = ' ',
-		path_display = { 'truncate' },
-		border = {},
-		borderchars = { '', '', '', '', '', '', '', '' },
+		-- prompt_prefix = require('defaults.icons').ui.Telescope .. ' ',
+		-- sorting_strategy = 'ascending',
+		-- selection_caret = ' ',
+		-- path_display = { 'truncate' },
+		-- border = {},
+		-- borderchars = { '', '', '', '', '', '', '', '' },
 		file_ignore_patterns = { '.git' },
-		layout_config = {
-			prompt_position = 'top',
-		},
+		-- layout_config = {
+			-- prompt_position = 'top',
+		-- },
 		mappings = {
 			i = {
 				['<Esc>'] = actions.close,
@@ -83,10 +83,11 @@ telescope.setup({
 		},
 	},
 	pickers = {
-		find_files = { previewer = false },
-		oldfiles = { previewer = false },
-		git_files = { previewer = false },
-		live_grep = { previewer = true},
+		buffers = { previewer = false, theme = 'ivy' },
+		find_files = { previewer = false, theme = 'ivy' },
+		oldfiles = { previewer = false, theme = 'ivy' },
+		git_files = { previewer = false, theme = 'ivy' },
+		live_grep = { previewer = true, theme = 'ivy' },
 	},
 })
 telescope.load_extension('ui-select')
