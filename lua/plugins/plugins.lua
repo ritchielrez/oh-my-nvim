@@ -32,9 +32,6 @@ local plugins = {
 	'sainnhe/everforest',
 	'shaunsingh/nord.nvim',
 
-  -- Fancy Icons
-	'kyazdani42/nvim-web-devicons',
-
 	-- Statusline at the bottom
 	{
 		'nvim-lualine/lualine.nvim',
@@ -76,20 +73,21 @@ local plugins = {
 
 	-- Fuzzy text searcher
 	{
-		'nvim-telescope/telescope.nvim',
-		cmd = { 'Telescope' },
-		dependencies = {
-			'nvim-telescope/telescope-project.nvim',
-			'nvim-telescope/telescope-ui-select.nvim',
-			{
-				'nvim-telescope/telescope-fzf-native.nvim',
-				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
-				-- build = 'make',
+		'ibhagwan/fzf-lua',
+		cmd = 'FzfLua',
+		dependencies = { 'echasnovski/mini.icons' },
+		opts = {
+			winopts = {
+				height = 0.3, -- short height like Ivy
+				width = 1.0, -- full width
+				row = 1.0, -- bottom of the screen
+				anchor = 'S', -- anchor to bottom(south)
+				border = 'none', -- optional, no border like Ivy
+				fullscreen = false,
 			},
+			defaults = { file_icons = 'mini' },
+			files = { previewer = false },
 		},
-		config = function()
-			require('plugins.telescope')
-		end,
 	},
 
 	----- Language support
@@ -268,12 +266,12 @@ local opts = {
 
 require('lazy').setup(plugins, opts)
 
--- Load telescope when nvim is launched without any arguments
+-- Load file picker when nvim is launched without any arguments
 vim.api.nvim_create_autocmd('VimEnter', {
 	callback = function()
 		if vim.fn.argc() == 0 then
 			vim.schedule(function()
-				vim.cmd('Telescope find_files')
+				vim.cmd('FzfLua files')
 			end)
 		end
 	end,

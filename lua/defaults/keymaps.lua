@@ -28,10 +28,10 @@ map('n', '<Leader>r', ':luafile %<CR>', opts)
 
 -- Telescope: fuzzy finder
 map('n', '<Leader>fb', ':Telescope buffers<CR>', opts)
-map('n', '<Leader>ff', ':Telescope find_files<CR>', opts)
+map('n', '<Leader>ff', ':FzfLua files<CR>', opts)
 map('n', '<Leader>fo', ':Telescope oldfiles<CR>', opts)
 map('n', '<Leader>fg', ':Telescope git_files<CR>', opts)
-map('n', '<Leader>fs', ':Telescope live_grep<CR>', opts)
+map('n', '<Leader>fs', ':FzfLua live_grep<CR>', opts)
 map('n', '<Leader>fn', ':Telescope notify<CR>', opts)
 
 -- Generic lsp keymaps
@@ -74,3 +74,6 @@ map('n', ']e', ':cp<CR>', opts)
 -- Splits
 map('n', '<leader>v', ':vs<CR><C-w>l', opts)
 map('n', '<leader>s', ':sp<CR><C-w>k', opts)
+
+-- Terminal keymaps
+map('t', '<Esc>', '<C-\\><C-n>', opts)

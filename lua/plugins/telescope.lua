@@ -15,7 +15,7 @@ telescope.setup({
 		-- borderchars = { '', '', '', '', '', '', '', '' },
 		file_ignore_patterns = { '.git' },
 		-- layout_config = {
-			-- prompt_position = 'top',
+		-- prompt_position = 'top',
 		-- },
 		mappings = {
 			i = {
