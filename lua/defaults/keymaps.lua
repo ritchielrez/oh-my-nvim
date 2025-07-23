@@ -24,7 +24,7 @@ map('n', '<Right>', ':vertical resize +2<CR>', opts)
 map('n', '<Leader>e', ':Lf<CR>', opts)
 
 -- Apply the currently changed config
-map('n', '<Leader>so', ':luafile %<CR>', opts)
+map('n', '<Leader>r', ':luafile %<CR>', opts)
 
 -- Telescope: fuzzy finder
 map('n', '<Leader>fb', ':Telescope buffers<CR>', opts)
@@ -64,3 +64,12 @@ map('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+-- Quickfix
+map('n', '<leader>co', ':copen<CR>', opts)
+map('n', '<leader>cx', ':cclose<CR>', opts)
+map('n', '[e', ':cn<CR>', opts)
+map('n', ']e', ':cp<CR>', opts)
+
+-- Splits
+map('n', '<leader>v', ':vs<CR><C-w>l', opts)
+map('n', '<leader>s', ':sp<CR><C-w>k', opts)
