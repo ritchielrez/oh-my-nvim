@@ -267,3 +267,14 @@ local opts = {
 }
 
 require('lazy').setup(plugins, opts)
+
+-- Load telescope when nvim is launched without any arguments
+vim.api.nvim_create_autocmd('VimEnter', {
+	callback = function()
+		if vim.fn.argc() == 0 then
+			vim.schedule(function()
+				vim.cmd('Telescope find_files')
+			end)
+		end
+	end,
+})
