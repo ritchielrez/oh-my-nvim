@@ -44,4 +44,8 @@ function M.toggle()
 	})
 end
 
+vim.api.nvim_create_user_command('FloatTerm', function()
+	M.toggle()
+end, { desc = 'Toggle a floating terminal' })
+
 return M
