@@ -86,6 +86,22 @@ local plugins = {
 		},
 	},
 
+	-- Floating terminal
+	{
+		dir = vim.fn.stdpath('config') .. '/lua/plugins/floatterm/',
+		name = 'floatterm',
+		keys = {
+			{
+				mode = { 'n', 'i', 't' },
+				'<C-\\>',
+				function()
+					require('plugins.floatterm').toggle()
+				end,
+				desc = 'Toggle Floating Terminal',
+			},
+		},
+	},
+
 	----- Language support
 
 	-- Set of languge parsers for better syntax highlighting
