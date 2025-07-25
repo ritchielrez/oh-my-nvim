@@ -71,8 +71,8 @@ map('n', '[e', ':cn<CR>', opts)
 map('n', ']e', ':cp<CR>', opts)
 
 -- Splits
-map('n', '<leader>v', ':vs<CR><C-w>l', opts)
-map('n', '<leader>s', ':sp<CR><C-w>k', opts)
+map('n', '<leader>"', ':vs<CR><C-w>l', opts)
+map('n', '<leader>%', ':sp<CR><C-w>k', opts)
 
 -- Terminal keymaps
 map('t', '<Esc>', '<C-\\><C-n>', opts)
