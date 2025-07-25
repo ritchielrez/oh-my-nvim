@@ -57,25 +57,19 @@ local plugins = {
 
 	----- Little useful utils
 
-	-- Code commenter
+	-- All in one
 	{
-		'numToStr/Comment.nvim',
-		event = 'VeryLazy',
-		opts = {},
-	},
-
-	-- Autopairs
-	{
-		'windwp/nvim-autopairs',
-		event = 'InsertEnter',
-		opts = {},
+		'echasnovski/mini.nvim',
+		version = '*',
+		config = function()
+			require('plugins.mini')
+		end,
 	},
 
 	-- Fuzzy text searcher
 	{
 		'ibhagwan/fzf-lua',
 		cmd = 'FzfLua',
-		dependencies = { 'echasnovski/mini.icons' },
 		opts = {
 			winopts = {
 				height = 0.3, -- short height like Ivy
