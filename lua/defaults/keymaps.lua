@@ -26,13 +26,12 @@ map('n', '<Leader>e', ':Lf<CR>', opts)
 -- Apply the currently changed config
 map('n', '<Leader>r', ':luafile %<CR>', opts)
 
--- Telescope: fuzzy finder
-map('n', '<Leader>fb', ':Telescope buffers<CR>', opts)
+-- FzfLua: fuzzy finder
+map('n', '<Leader>fb', ':FzfLua buffers<CR>', opts)
 map('n', '<Leader>ff', ':FzfLua files<CR>', opts)
-map('n', '<Leader>fo', ':Telescope oldfiles<CR>', opts)
-map('n', '<Leader>fg', ':Telescope git_files<CR>', opts)
+map('n', '<Leader>fo', ':FzfLua oldfiles<CR>', opts)
+map('n', '<Leader>fg', ':FzfLua git_files<CR>', opts)
 map('n', '<Leader>fs', ':FzfLua live_grep<CR>', opts)
-map('n', '<Leader>fn', ':Telescope notify<CR>', opts)
 
 -- Generic lsp keymaps
 map('n', '<Leader>ls', ':LspStart<CR>', opts)
