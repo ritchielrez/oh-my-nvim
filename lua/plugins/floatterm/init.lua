@@ -44,6 +44,4 @@ function M.toggle()
 	})
 end
 
--- vim.keymap.set({ 'n', 'i', 't' }, '<C-\\>', ToggleFloatingTerminal, { noremap = true, silent = true })
-
 return M

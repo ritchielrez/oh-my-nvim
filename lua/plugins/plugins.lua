@@ -90,6 +90,10 @@ local plugins = {
 	{
 		dir = vim.fn.stdpath('config') .. '/lua/plugins/floatterm/',
 		name = 'floatterm',
+    cmd = 'FloatTerm',
+		config = function()
+			require('plugins.floatterm')
+		end,
 		keys = {
 			{
 				mode = { 'n', 'i', 't' },
