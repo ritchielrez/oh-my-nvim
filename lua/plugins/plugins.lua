@@ -87,6 +87,8 @@ local plugins = {
 			},
 			defaults = { file_icons = 'mini' },
 			files = { previewer = false },
+			oldfiles = { previewer = false },
+			git = { files = { previewer = false } },
 		},
 	},
 
