@@ -24,20 +24,6 @@ mason_lspconfig.setup({
 
 local opt = {}
 
-local function lsp_config()
-	vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = 'single',
-		-- width = 60,
-		-- height = 30,
-	})
-
-	vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = 'single',
-		-- width = 60,
-		-- height = 30,
-	})
-end
-
 local function lsp_keymaps(bufnr, lsp_format)
 	local bufopt = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>FzfLua lsp_definitions<CR>', bufopt)
@@ -56,8 +42,6 @@ local function lsp_keymaps(bufnr, lsp_format)
 end
 
 local function on_attach(client, bufnr)
-	lsp_config()
-
 	local lsp_format = true
 
 	if client.name == 'lua_ls' then

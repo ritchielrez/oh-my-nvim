@@ -38,10 +38,12 @@ set.lazyredraw = true
 
 set.fsync = false
 
-set.list = false
--- set.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
+set.list = true
+set.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
 
 set.clipboard = 'unnamedplus'
+
+vim.o.winborder = "rounded"
 
 let.mapleader = ' '
 
