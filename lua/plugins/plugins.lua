@@ -118,11 +118,23 @@ local plugins = {
 
 	-- Formatting and diagnostics support
 	{
-		'mhartington/formatter.nvim',
-		cmd = 'Format',
-		config = function()
-			require('language_support.formatter')
-		end,
+		'stevearc/conform.nvim',
+		opts = {
+			default_format_opts = { lsp_format = 'fallback' },
+			formatters_by_ft = {
+				c = { 'clangformat' },
+				cpp = c,
+				go = { 'golines' },
+				lua = { 'stylua' },
+				javascript = { 'prettierd' },
+				typescript = javascript,
+				javascriptreact = javascript,
+				typescriptreact = typescript,
+			},
+			format_on_save = {
+				timeout_ms = 500,
+			},
+		},
 	},
 
 	{
