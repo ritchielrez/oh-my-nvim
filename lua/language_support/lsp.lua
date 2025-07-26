@@ -70,6 +70,11 @@ local function on_attach(client, bufnr)
 		lsp_format = false
 	end
 
+	if client.name == 'vtsls' then
+		client.server_capabilities.document_formatting = false
+		lsp_format = false
+	end
+
 	lsp_keymaps(bufnr, lsp_format)
 end
 
