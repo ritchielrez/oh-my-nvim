@@ -34,11 +34,6 @@ local function lsp_keymaps(bufnr, lsp_format)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', bufopt)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', bufopt)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>FzfLua lsp_code_actions<CR>', bufopt)
-
-	if lsp_format then
-		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lf', '<cmd>lua vim.lsp.buf.format({range = nil})<CR>', bufopt)
-		vim.api.nvim_buf_set_keymap(bufnr, 'v', '<leader>lf', '<cmd>lua vim.lsp.buf.format()<CR>', bufopt)
-	end
 end
 
 local function on_attach(client, bufnr)
