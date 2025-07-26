@@ -40,14 +40,14 @@ end
 
 local function lsp_keymaps(bufnr, lsp_format)
 	local bufopt = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>Telescope lsp_definitions<CR>', bufopt)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>Telescope lsp_declarations<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>FzfLua lsp_definitions<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>FzfLua lsp_declarations<CR>', bufopt)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', bufopt)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gI', '<cmd>Telescope lsp_implementations<CR>', bufopt)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gI', '<cmd>FzfLua lsp_implementations<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>FzfLua lsp_references<CR>', bufopt)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', bufopt)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', bufopt)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', bufopt)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>FzfLua lsp_code_actions<CR>', bufopt)
 
 	if lsp_format then
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lf', '<cmd>lua vim.lsp.buf.format({range = nil})<CR>', bufopt)
