@@ -164,8 +164,18 @@ local plugins = {
 		end,
 	},
 	-- Lsp status
+	{
 		'j-hui/fidget.nvim',
-		opts = {},
+		event = 'VeryLazy',
+		tag = 'v1.6.1',
+		opt = true,
+		opts = {
+			notification = {
+				window = {
+					winblend = 0,
+				},
+			},
+		},
 	},
 
 	-- Autocomplete support
