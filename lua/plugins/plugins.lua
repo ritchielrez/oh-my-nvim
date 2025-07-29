@@ -163,11 +163,9 @@ local plugins = {
 			require('language_support.lsp')
 		end,
 	},
-	{
-		'williamboman/mason.nvim',
-		config = function()
-			require('language_support.mason')
-		end,
+	-- Lsp status
+		'j-hui/fidget.nvim',
+		opts = {},
 	},
 
 	-- Autocomplete support
