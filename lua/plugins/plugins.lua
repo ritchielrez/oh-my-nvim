@@ -54,6 +54,7 @@ local plugins = {
 	-- Highlighting color codes
 	{
 		'catgoose/nvim-colorizer.lua',
+		commit = '16597180b4dd81fa3d23d88c4d2f1b49154f9479',
 		event = 'BufRead',
 		opts = {},
 	},
