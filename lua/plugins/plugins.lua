@@ -45,6 +45,7 @@ local plugins = {
 	-- Highlighting todo comments
 	{
 		'folke/todo-comments.nvim',
+		version = '*',
 		event = 'VeryLazy',
 		opt = true,
 		opts = {},
