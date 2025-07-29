@@ -21,7 +21,7 @@ function M.toggle()
 		-- Start terminal job
 		-- vim.fn.termopen(os.getenv('SHELL') or 'bash')
 		vim.api.nvim_buf_call(M.float_term.buf, function()
-			vim.fn.termopen(vim.o.shell)
+			vim.fn.termopen('bash')
 			vim.cmd('startinsert')
 		end)
 	end
