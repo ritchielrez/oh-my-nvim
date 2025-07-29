@@ -36,6 +36,7 @@ local plugins = {
 	-- Statusline at the bottom
 	{
 		'nvim-lualine/lualine.nvim',
+		commit = 'a94fc68960665e54408fe37dcf573193c4ce82c9',
 		config = function()
 			require('ui.lualine')
 		end,
