@@ -241,16 +241,6 @@ local plugins = {
 		tag = 'v3.7',
 		cmd = { 'Git', 'Gwrite' },
 	},
-
-	-- A beautiful undo tree view
-	{
-		'jiaoshijie/undotree',
-		dependencies = 'nvim-lua/plenary.nvim',
-		config = true,
-		keys = {
-			{ '<leader>u', "<cmd>lua require('undotree').toggle()<cr>" },
-		},
-	},
 }
 
 local opts = {
