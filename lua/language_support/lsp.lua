@@ -3,11 +3,6 @@ if not lspconfig_ok then
 	print('Lspconfig plugin not installed')
 end
 
-local mason_lspconfig_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
-if not mason_lspconfig_ok then
-	print('Mason-lspconfig plugin not installed')
-end
-
 local servers = {
 	'gopls',
 	'lua_ls',
@@ -17,10 +12,6 @@ local servers = {
 	'vtsls',
 	'jsonls',
 }
-
-mason_lspconfig.setup({
-	automatic_installation = false,
-})
 
 local opt = {}
 
