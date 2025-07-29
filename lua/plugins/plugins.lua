@@ -230,13 +230,6 @@ local plugins = {
 		cmd = { 'Git', 'Gwrite' },
 	},
 
-	----- Markdown
-	{
-		'brianhuster/live-preview.nvim',
-		ft = 'markdown',
-		opts = {},
-	},
-
 	-- A beautiful undo tree view
 	{
 		'jiaoshijie/undotree',
