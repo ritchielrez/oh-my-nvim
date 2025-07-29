@@ -108,6 +108,14 @@ local plugins = {
 
 	----- Language support
 
+	-- Helps install tools such as lsp, formatter, linters etc
+	{
+		'williamboman/mason.nvim',
+		config = function()
+			require('language_support.mason')
+		end,
+	},
+
 	-- Set of languge parsers for better syntax highlighting
 	{
 		'nvim-treesitter/nvim-treesitter',
