@@ -3,3 +3,4 @@ line_endings = "Unix"
 indent_type = "Tabs"
 indent_width = 4
 quote_style = "AutoPreferSingle"
+syntax="Lua52"

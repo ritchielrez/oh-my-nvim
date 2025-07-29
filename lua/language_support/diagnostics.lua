@@ -1,8 +1,8 @@
 local icons = require('defaults.icons')
 
 local config = {
-	virtual_lines = true,
-	virtual_text = false,
+	-- virtual_lines = true,
+	-- virtual_text = false,
 	-- virtual_text = {
 	-- 	-- spacing = 7,
 	-- 	-- update_in_insert = false,

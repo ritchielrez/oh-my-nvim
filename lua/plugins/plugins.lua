@@ -152,14 +152,6 @@ local plugins = {
 		end,
 	},
 
-	-- Language server protocol support
-	{
-		'neovim/nvim-lspconfig',
-		cmd = 'LspStart',
-		config = function()
-			require('language_support.lsp')
-		end,
-	},
 	-- Lsp status
 	{
 		'j-hui/fidget.nvim',
