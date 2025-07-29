@@ -174,8 +174,8 @@ local plugins = {
 	-- Lsp status
 	{
 		'j-hui/fidget.nvim',
-		event = 'VeryLazy',
 		tag = 'v1.6.1',
+		event = 'VeryLazy',
 		opt = true,
 		opts = {
 			notification = {
@@ -189,6 +189,7 @@ local plugins = {
 	-- Autocomplete support
 	{
 		'hrsh7th/nvim-cmp',
+		commit = 'b5311ab3ed9c846b585c0c15b7559be131ec4be9',
 		event = 'InsertEnter',
 		dependencies = {
 			'hrsh7th/cmp-buffer',
