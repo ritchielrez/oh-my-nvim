@@ -69,6 +69,7 @@ local plugins = {
 	-- Fuzzy text searcher
 	{
 		'ibhagwan/fzf-lua',
+    tag = '0.7',
 		cmd = 'FzfLua',
 		opts = {
 			winopts = {
