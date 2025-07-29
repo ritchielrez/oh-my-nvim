@@ -43,7 +43,7 @@ set.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
 
 set.clipboard = 'unnamedplus'
 
-vim.o.winborder = "rounded"
+vim.o.winborder = 'rounded'
 
 let.mapleader = ' '
 
