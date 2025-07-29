@@ -18,7 +18,7 @@ local plugins = {
 	----- UI related plugins
 
 	-- Colorschemes
-	'tiagovla/tokyodark.nvim',
+	-- 'tiagovla/tokyodark.nvim',
 	{
 		'catppuccin/nvim',
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -28,9 +28,9 @@ local plugins = {
 			require('ui.catppuccin')
 		end,
 	},
-	'sainnhe/gruvbox-material',
-	'sainnhe/everforest',
-	'shaunsingh/nord.nvim',
+	-- 'sainnhe/gruvbox-material',
+	-- 'sainnhe/everforest',
+	-- 'shaunsingh/nord.nvim',
 
 	-- Statusline at the bottom
 	{
