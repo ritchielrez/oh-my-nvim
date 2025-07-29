@@ -238,6 +238,7 @@ local plugins = {
 	-- Greatest plugin to ever exist :)
 	{
 		'tpope/vim-fugitive',
+		tag = 'v3.7',
 		cmd = { 'Git', 'Gwrite' },
 	},
 
