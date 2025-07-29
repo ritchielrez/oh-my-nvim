@@ -1,4 +1,7 @@
-local dap = require('dap')
+local dap_ok, dap = pcall(require, 'dap')
+if not dap_ok then
+  return
+end
 
 local mason_path = vim.fn.glob(vim.fn.stdpath('data') .. '/mason/')
 
