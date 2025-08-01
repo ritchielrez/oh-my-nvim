@@ -1,3 +1,17 @@
+local servers = {}
+
+local config_files = vim.api.nvim_get_runtime_file('lsp/*.lua', true)
+
+-- Get the list of server names from lsp configs in lsp/ folder
+-- Got this solution from https://github.com/neovim/neovim/discussions/33978#discussioncomment-13385052
+for _, config_file in ipairs(config_files) do
+	local name = config_file:match('([^/\\]*)%.lua$')
+
+	if name and (name:len() > 0) then
+		table.insert(servers, name)
+	end
+end
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('lsp-attach', {}),
 	callback = function(args)
@@ -13,9 +27,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
--- Only enable lua_ls by default
-vim.lsp.enable('lua_ls')
-
-vim.api.nvim_create_user_command('LspStop', function()
-	vim.lsp.stop_client(vim.lsp.get_clients())
-end, { nargs = 0 })
+for _, server in ipairs(servers) do
+	local config = vim.lsp.config[server]
+	vim.api.nvim_create_autocmd('FileType', {
+		group = vim.api.nvim_create_augroup('lsp_commands', { clear = false }),
+		pattern = config.filetypes,
+		callback = function()
+			vim.api.nvim_create_user_command('LspStart', function()
+				vim.lsp.enable(server, true)
+				vim.cmd.edit()
+			end, { nargs = 0 })
+			vim.api.nvim_create_user_command('LspStop', function()
+				vim.lsp.enable(server, false)
+			end, { nargs = 0 })
+		end,
+	})
+end
