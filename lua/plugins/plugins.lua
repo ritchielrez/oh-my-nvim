@@ -281,14 +281,3 @@ local opts = {
 }
 
 require('lazy').setup(plugins, opts)
-
--- Load file picker when nvim is launched without any arguments
-vim.api.nvim_create_autocmd('VimEnter', {
-	callback = function()
-		if vim.fn.argc() == 0 then
-			vim.schedule(function()
-				vim.cmd('FzfLua files')
-			end)
-		end
-	end,
-})
