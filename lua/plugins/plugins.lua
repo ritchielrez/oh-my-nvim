@@ -129,14 +129,16 @@ local plugins = {
 		opts = {
 			default_format_opts = { lsp_format = 'fallback' },
 			formatters_by_ft = {
-				c = { 'clangformat' },
-				cpp = c,
+				c = { 'clang-format' },
+				cpp = { 'clang-format' },
+				css = { 'prettier' },
+				html = { 'prettier' },
 				go = { 'golines' },
 				lua = { 'stylua' },
-				javascript = { 'prettierd' },
-				typescript = javascript,
-				javascriptreact = javascript,
-				typescriptreact = typescript,
+				javascript = css,
+				typescript = { 'prettier' },
+				javascriptreact = { 'prettier' },
+				typescriptreact = { 'prettier' },
 			},
 			format_on_save = {
 				timeout_ms = 500,
