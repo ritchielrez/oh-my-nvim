@@ -218,6 +218,11 @@ local plugins = {
 		tag = 'v3.7',
 		cmd = { 'Git', 'Gwrite' },
 	},
+
+	{
+		'chomosuke/typst-preview.nvim',
+		version = '*',
+	},
 }
 
 local opts = {
