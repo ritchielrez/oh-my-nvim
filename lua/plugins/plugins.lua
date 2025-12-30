@@ -20,15 +20,13 @@ local plugins = {
 	-- Colorschemes
 	-- 'tiagovla/tokyodark.nvim',
 	{
-		'catppuccin/nvim',
+		'y9san9/y9nika.nvim',
 		version = '*',
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
-		name = 'catppuccin',
-		config = function()
-			require('ui.catppuccin')
-		end,
 	},
+
+	-- 'catppuccin/nvim',
 	-- 'sainnhe/gruvbox-material',
 	-- 'sainnhe/everforest',
 	-- 'shaunsingh/nord.nvim',
