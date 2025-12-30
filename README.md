@@ -100,8 +100,8 @@ A list of things that you need to have in your system in order to use this proje
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Lock plugins to specific commits
-- [ ] If possible, make this config perform better in **Windows**
+- [X] Lock plugins to specific commits
+- [X] If possible, make this config perform better in **Windows** (not resolved)
 
 See the [open issues](https://github.com/ritchielrez/oh-my-nvim/issues) for a full list of proposed features (and known issues).
 
