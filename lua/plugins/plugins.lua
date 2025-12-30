@@ -24,6 +24,9 @@ local plugins = {
 		version = '*',
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			require('ui.color')
+		end,
 	},
 
 	-- 'catppuccin/nvim',
@@ -131,6 +134,7 @@ local plugins = {
 				cpp = { 'clang-format' },
 				css = { 'prettier' },
 				html = { 'prettier' },
+				gleam = { 'gleam' },
 				go = { 'golines' },
 				lua = { 'stylua' },
 				javascript = css,
