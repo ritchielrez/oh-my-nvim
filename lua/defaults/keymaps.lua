@@ -37,15 +37,6 @@ map('n', '<Leader>fs', ':FzfLua live_grep<CR>', opts)
 map('n', '<Leader>ls', ':LspStart<CR>', opts)
 map('n', '<Leader>lx', ':LspStop<CR>', opts)
 
--- Command corrections
-map('c', 'W', 'w', {})
-map('c', 'Wq', 'wq', {})
-map('c', 'WQ', 'wq', {})
-map('c', 'Q', 'q', {})
-map('c', 'Q!', 'q!', {})
-map('c', 'Qa!', 'qa!', {})
-map('c', 'QA!', 'qa!', {})
-
 -- Git related keymaps
 map({ 'n', 'v' }, '<Leader>gb', ':Gitsigns toggle_current_line_blame<CR>', opts)
 map({ 'n', 'v' }, '<Leader>ghs', ':Gitsigns stage_hunk<CR>', opts)
