@@ -265,7 +265,11 @@ local plugins = {
 	-- set of languge parsers for better syntax highlighting
 	{
 		'nvim-treesitter/nvim-treesitter',
+		build = ':TSUpdate',
 		tag = 'v0.10.0',
+		config = function(_, opts)
+			require('nvim-treesitter.configs').setup(opts)
+		end,
 		opts = {
 			ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'slint', 'rust' },
 			sync_installed = true,
@@ -274,6 +278,7 @@ local plugins = {
 				disable = { '' }, -- list of language that will be disabled
 				additional_vim_regex_highlighting = false,
 			},
+			indent = { enable = true },
 		},
 	},
 
