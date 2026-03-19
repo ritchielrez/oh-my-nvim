@@ -21,7 +21,7 @@ local function set_transparent() -- set UI component to transparent
 	vim.api.nvim_set_hl(0, 'TabLineFill', { bg = 'none', fg = '#767676' })
 end
 
-set_transparent()
+-- set_transparent()
 
 -- ============================================================================
 -- OPTIONS
@@ -89,7 +89,11 @@ vim.opt.errorbells = false -- no error sounds
 vim.opt.backspace = 'indent,eol,start' -- better backspace behaviour
 vim.opt.autochdir = false -- do not autochange directories
 vim.opt.iskeyword:append('-') -- include - in words
-vim.opt.path:append('**') -- include subdirs in search
+
+-- include certain directories so we can find files in those directories
+vim.opt.path:append('src/')
+vim.opt.path:append('include/')
+
 vim.opt.selection = 'inclusive' -- include last char in selection
 vim.opt.mouse = 'a' -- enable mouse support
 vim.opt.clipboard:append('unnamedplus') -- use system clipboard
@@ -110,10 +114,13 @@ vim.opt.diffopt:append('linematch:60') -- improve diff display
 vim.opt.redrawtime = 10000 -- increase neovim redraw tolerance
 vim.opt.maxmempattern = 20000 -- increase max memory
 
+vim.opt.laststatus = 3 -- thinner lines between splits
+
+-- use ripgrep for vim's builtin search
 if vim.fn.executable('rg') == 1 then
 	vim.opt.grepprg = 'rg --vimgrep --smart-case'
 end
-vim.cmd(":command! -nargs=+ Grep execute 'silent grep! <args>' | copen")
+vim.cmd(":command! -nargs=+ Grep execute 'silent grep! <args>' | copen") -- opens a quickfix list after searching for the given text
 
 -- ============================================================================
 -- KEYMAPS
@@ -175,6 +182,14 @@ vim.keymap.set('n', '<leader>ff', ':find ', { desc = 'Find files' })
 vim.keymap.set('n', '<leader>fs', ':Grep ', { desc = 'Project wide search' })
 
 vim.keymap.set('n', '<leader>e', ':20Lex<CR> ', { desc = 'Open netrw to the left' })
+
+-- git related keymaps
+vim.keymap.set({ 'n', 'v' }, '<Leader>gb', ':Gitsigns toggle_current_line_blame<CR>', opts)
+vim.keymap.set({ 'n', 'v' }, '<Leader>ghs', ':Gitsigns stage_hunk<CR>', opts)
+vim.keymap.set({ 'n', 'v' }, '<Leader>ghr', ':Gitsigns reset_hunk<CR>', opts)
+vim.keymap.set('n', '<Leader>gc', ':Git commit<CR>', opts)
+vim.keymap.set('n', '<Leader>gp', ':Git! push<CR>', opts)
+vim.keymap.set('n', '<Leader>gw', ':Gwrite<CR>', opts)
 
 -- ============================================================================
 -- AUTOCMDS
@@ -256,6 +271,33 @@ local plugins = {
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
+			local transparent_background = false
+
+			if not vim.g.neovide then
+				transparent_background = true
+			end
+
+			local catppuccin = require('catppuccin')
+
+			catppuccin.setup({
+				flavour = 'mocha',
+				dim_inactive = {
+					enabled = false,
+					shade = 'dark',
+					percentage = 0.15,
+				},
+				transparent_background = transparent_background,
+				term_colors = true,
+				compile = {
+					enabled = false,
+					path = vim.fn.stdpath('cache') .. '/catppuccin',
+				},
+				integrations = {
+					treesitter = true,
+					rainbow_delimiters = true,
+				},
+			})
+
 			vim.cmd('colorscheme catppuccin')
 		end,
 	},
