@@ -313,7 +313,18 @@ local plugins = {
 			require('nvim-treesitter.configs').setup(opts)
 		end,
 		opts = {
-			ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'slint', 'rust' },
+			ensure_installed = {
+				'c',
+				'cpp',
+				'lua',
+				'vim',
+				'vimdoc',
+				'query',
+				'markdown',
+				'markdown_inline',
+				'slint',
+				'rust',
+			},
 			sync_installed = true,
 			highlight = {
 				enable = true, -- false will disable the whole extension
