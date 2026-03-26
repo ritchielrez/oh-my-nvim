@@ -168,6 +168,29 @@ vim.keymap.set('n', 'K', ':m .-2<CR>==', { desc = 'Move line up' })
 vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and reselect' })
 vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
+vim.keymap.set('n', '<leader>r', ':below Compile!<CR>')
+vim.keymap.set('n', '<leader>R', ':below Recompile<CR>')
+
+vim.keymap.set('n', 'gl', ':lua vim.diagnostic.open_float()<CR>', { desc = 'Open diagnostic window' })
+vim.keymap.set(
+	'n',
+	'[d',
+	':lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>',
+	{ desc = 'Go to previous diagnostic' }
+)
+vim.keymap.set(
+	'n',
+	']d',
+	':lua vim.diagnostic.goto_next({ border = "rounded" })<CR>',
+	{ desc = 'Go to next diagnostic' }
+)
+vim.keymap.set(
+	'n',
+	'<leader>q',
+	':lua vim.diagnostic.setloclist()<CR>',
+	{ desc = 'Put diagnostics in a location list' }
+)
+
 vim.keymap.set('n', '<leader>pa', function() -- show file path
 	local path = vim.fn.expand('%:p')
 	vim.fn.setreg('+', path)
@@ -184,12 +207,27 @@ vim.keymap.set('n', '<leader>fs', ':Grep ', { desc = 'Project wide search' })
 vim.keymap.set('n', '<leader>e', ':20Lex<CR> ', { desc = 'Open netrw to the left' })
 
 -- git related keymaps
-vim.keymap.set({ 'n', 'v' }, '<Leader>gb', ':Gitsigns toggle_current_line_blame<CR>', opts)
-vim.keymap.set({ 'n', 'v' }, '<Leader>ghs', ':Gitsigns stage_hunk<CR>', opts)
-vim.keymap.set({ 'n', 'v' }, '<Leader>ghr', ':Gitsigns reset_hunk<CR>', opts)
-vim.keymap.set('n', '<Leader>gc', ':Git commit<CR>', opts)
-vim.keymap.set('n', '<Leader>gp', ':Git! push<CR>', opts)
-vim.keymap.set('n', '<Leader>gw', ':Gwrite<CR>', opts)
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<Leader>gb',
+	':Gitsigns toggle_current_line_blame<CR>',
+	{ desc = 'Toggle gitsigs on current line' }
+)
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<Leader>ghs',
+	':Gitsigns stage_hunk<CR>',
+	{ desc = 'Git stage current line or selected lines' }
+)
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<Leader>ghr',
+	':Gitsigns reset_hunk<CR>',
+	{ desc = 'Git restore current line or selected lines' }
+)
+vim.keymap.set('n', '<Leader>gc', ':Git commit<CR>', { desc = 'Git commit' })
+vim.keymap.set('n', '<Leader>gp', ':Git! push<CR>', { desc = 'Git push asynchronously' })
+vim.keymap.set('n', '<Leader>gw', ':Gwrite<CR>', { desc = 'Git stage current file' })
 
 -- ============================================================================
 -- AUTOCMDS
@@ -302,6 +340,27 @@ local plugins = {
 		end,
 	},
 
+	-- colorize color codes
+	{
+		'nvim-mini/mini.hipatterns',
+		tag = 'v0.17.0',
+		config = function()
+			local hipatterns = require('mini.hipatterns')
+			hipatterns.setup({
+				highlighters = {
+					-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+					fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+					hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+					todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+					note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+
+					-- Highlight hex color strings (`#rrggbb`) using that color
+					hex_color = hipatterns.gen_highlighter.hex_color(),
+				},
+			})
+		end,
+	},
+
 	----- language support
 
 	-- set of languge parsers for better syntax highlighting
@@ -313,18 +372,7 @@ local plugins = {
 			require('nvim-treesitter.configs').setup(opts)
 		end,
 		opts = {
-			ensure_installed = {
-				'c',
-				'cpp',
-				'lua',
-				'vim',
-				'vimdoc',
-				'query',
-				'markdown',
-				'markdown_inline',
-				'slint',
-				'rust',
-			},
+			ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'slint', 'rust' },
 			sync_installed = true,
 			highlight = {
 				enable = true, -- false will disable the whole extension
@@ -360,6 +408,7 @@ local plugins = {
 		},
 	},
 
+	-- linting support
 	{
 		'mfussenegger/nvim-lint',
 		commit = '9c6207559297b24f0b7c32829f8e45f7d65b991f',
@@ -401,6 +450,22 @@ local plugins = {
 					nvim_lint.try_lint()
 				end,
 			})
+		end,
+	},
+
+	-- compile mode like emacs in neovim
+	{
+		'ej-shafran/compile-mode.nvim',
+		version = '*',
+		config = function()
+			vim.g.compile_mode = {
+				default_command = {
+					c = 'cmake --build build',
+					cpp = 'cmake --build build',
+					rust = 'cargo run',
+				},
+				recompile_no_fail = true,
+			}
 		end,
 	},
 
