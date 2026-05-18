@@ -124,6 +124,38 @@ local plugins = {
 		end,
 	},
 
+	-- Rainbow parantheses
+	{
+		'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
+		name = 'rainbow-delimiters',
+		tag = 'v0.12.0',
+		config = function()
+			require('rainbow-delimiters.setup').setup({
+				strategy = {
+					[''] = 'rainbow-delimiters.strategy.global',
+					vim = 'rainbow-delimiters.strategy.local',
+				},
+				query = {
+					[''] = 'rainbow-delimiters',
+					lua = 'rainbow-blocks',
+				},
+				priority = {
+					[''] = 110,
+					lua = 210,
+				},
+				highlight = {
+					'RainbowDelimiterRed',
+					'RainbowDelimiterYellow',
+					'RainbowDelimiterBlue',
+					'RainbowDelimiterOrange',
+					'RainbowDelimiterGreen',
+					'RainbowDelimiterViolet',
+					'RainbowDelimiterCyan',
+				},
+			})
+		end,
+	},
+
 	-- Formatting and diagnostics support
 	{
 		'stevearc/conform.nvim',
