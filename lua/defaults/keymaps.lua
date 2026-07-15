@@ -24,7 +24,7 @@ map('n', '<Right>', ':vertical resize +2<CR>', opts)
 map('n', '<Leader>e', ':Lf<CR>', opts)
 
 -- Apply the currently changed config
-map('n', '<Leader>r', ':luafile %<CR>', opts)
+map('n', '<Leader>so', ':luafile %<CR>', opts)
 
 -- FzfLua: fuzzy finder
 map('n', '<Leader>fb', ':FzfLua buffers<CR>', opts)
@@ -58,8 +58,8 @@ map('n', '[e', ':cn<CR>', opts)
 map('n', ']e', ':cp<CR>', opts)
 
 -- Splits
-map('n', '<leader>"', ':vs<CR><C-w>l', opts)
-map('n', '<leader>%', ':sp<CR><C-w>j', opts)
+map('n', '<leader>r', ':vs<CR><C-w>l', opts)
+map('n', '<leader>d', ':sp<CR><C-w>j', opts)
 
 -- Terminal keymaps
 map('t', '<Esc>', '<C-\\><C-n>', opts)
