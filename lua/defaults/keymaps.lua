@@ -60,6 +60,7 @@ map('n', ']e', ':cp<CR>', opts)
 -- Splits
 map('n', '<leader>r', ':vs<CR><C-w>l', opts)
 map('n', '<leader>d', ':sp<CR><C-w>j', opts)
+map('n', '<leader>x', ':q!<CR>', opts)
 
 -- Terminal keymaps
 map('t', '<Esc>', '<C-\\><C-n>', opts)
