@@ -56,6 +56,7 @@ local plugins = {
 	-- Highlighting color codes
 	{
 		'brenoprata10/nvim-highlight-colors',
+		commit = 'e4c7af0211866162d999ce0bdd6a029302e19139',
 		opts = {
 			render = 'virtual',
 			virtual_symbol = '',
