@@ -79,22 +79,50 @@ local plugins = {
 
 	-- Fuzzy text searcher
 	{
-		'ibhagwan/fzf-lua',
-		tag = '0.7',
-		cmd = 'FzfLua',
+		'dmtrKovalenko/fff.nvim',
+		build = function()
+			-- downloads a prebuilt binary or falls back to cargo build
+			require('fff.download').download_or_build_binary()
+		end,
 		opts = {
-			winopts = {
-				height = 0.3, -- short height like Ivy
-				width = 1.0, -- full width
-				row = 1.0, -- bottom of the screen
-				anchor = 'S', -- anchor to bottom(south)
-				border = 'none', -- optional, no border like Ivy
-				fullscreen = false,
+			prompt = '  ',
+			prompt_vim_mode = true,
+			debug = {
+				enabled = true,
+				show_scores = true,
 			},
-			defaults = { file_icons = 'mini' },
-			files = { previewer = false },
-			oldfiles = { previewer = false },
-			git = { files = { previewer = false } },
+		},
+		lazy = false, -- the plugin lazy-initialises itself
+		keys = {
+			{
+				'ff',
+				function()
+					require('fff').find_files()
+				end,
+				desc = 'FFFind files',
+			},
+			-- {
+			-- 	'fg',
+			-- 	function()
+			-- 		require('fff').live_grep()
+			-- 	end,
+			-- 	desc = 'LiFFFe grep',
+			-- },
+			{
+				'fg',
+				function()
+					require('fff').live_grep({ grep = { modes = { 'fuzzy', 'plain' } } })
+				end,
+				desc = 'Live fffuzy grep',
+			},
+			{
+				'fw',
+				function()
+					require('fff').live_grep_under_cursor()
+				end,
+				mode = { 'n', 'x' },
+				desc = 'Search current word / selection',
+			},
 		},
 	},
 
