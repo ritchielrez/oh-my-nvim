@@ -55,10 +55,14 @@ local plugins = {
 
 	-- Highlighting color codes
 	{
-		'catgoose/nvim-colorizer.lua',
-		commit = '16597180b4dd81fa3d23d88c4d2f1b49154f9479',
-		event = 'BufRead',
-		opts = {},
+		'brenoprata10/nvim-highlight-colors',
+		opts = {
+			render = 'virtual',
+			virtual_symbol = '',
+			virtual_symbol_prefix = ' ',
+			virtual_symbol_suffix = ' ',
+			exclude_buftypes = { 'text' },
+		},
 	},
 
 	----- Little useful utils
