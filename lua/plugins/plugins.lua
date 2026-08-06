@@ -165,6 +165,17 @@ local plugins = {
 		name = 'rainbow-delimiters',
 		tag = 'v0.12.0',
 		config = function()
+	-- Task runner similar ones seen in Vscode and Zed
+	{
+		'stevearc/overseer.nvim',
+		version = '*',
+		cmd = { 'OverseerRun', 'OverseerRerun' },
+		opt = true,
+		config = function()
+			require('plugins.overseer')
+		end,
+	},
+
 			require('rainbow-delimiters.setup').setup({
 				strategy = {
 					[''] = 'rainbow-delimiters.strategy.global',
