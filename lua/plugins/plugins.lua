@@ -247,6 +247,7 @@ local plugins = {
 				typescript = { 'prettier' },
 				javascriptreact = { 'prettier' },
 				typescriptreact = { 'prettier' },
+				rust = { 'rustfmt' },
 			},
 			format_on_save = {
 				timeout_ms = 500,
