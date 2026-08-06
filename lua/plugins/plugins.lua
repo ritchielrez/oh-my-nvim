@@ -92,6 +92,7 @@ local plugins = {
 				['cd'] = { 'actions.cd', mode = 'n' },
 				['h'] = { 'actions.parent', mode = 'n' },
 				['l'] = { 'actions.select', mode = 'n' },
+				['q'] = { 'actions.close', mode = 'n' },
 			},
 		},
 	},
