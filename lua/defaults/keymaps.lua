@@ -59,4 +59,7 @@ map('n', '<leader>x', ':q!<CR>', opts)
 map('t', '<Esc>', '<C-\\><C-n>', opts)
 
 -- File manager
-map('n', '<leader>e', ':lua MiniFiles.open()<CR>', opts)
+map('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', opts)
+
+-- Task runner
+map('n', '<leader>tr', ':OverseerRerun<CR>', opts)

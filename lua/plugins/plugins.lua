@@ -77,6 +77,25 @@ local plugins = {
 		end,
 	},
 
+	-- File explorer
+	{
+		'stevearc/oil.nvim',
+		version = '*',
+		event = 'VeryLazy',
+		opt = true,
+		opts = {
+			win_options = {
+				number = false,
+				relativenumber = false,
+			},
+			keymaps = {
+				['cd'] = { 'actions.cd', mode = 'n' },
+				['h'] = { 'actions.parent', mode = 'n' },
+				['l'] = { 'actions.select', mode = 'n' },
+			},
+		},
+	},
+
 	-- Fuzzy text searcher
 	{
 		'dmtrKovalenko/fff.nvim',
@@ -146,6 +165,17 @@ local plugins = {
 		},
 	},
 
+	-- Task runner similar ones seen in Vscode and Zed
+	{
+		'stevearc/overseer.nvim',
+		version = '*',
+		cmd = { 'OverseerRun', 'OverseerRerun' },
+		opt = true,
+		config = function()
+			require('plugins.overseer')
+		end,
+	},
+
 	----- Language support
 
 	-- Set of languge parsers for better syntax highlighting
@@ -165,17 +195,6 @@ local plugins = {
 		name = 'rainbow-delimiters',
 		tag = 'v0.12.0',
 		config = function()
-	-- Task runner similar ones seen in Vscode and Zed
-	{
-		'stevearc/overseer.nvim',
-		version = '*',
-		cmd = { 'OverseerRun', 'OverseerRerun' },
-		opt = true,
-		config = function()
-			require('plugins.overseer')
-		end,
-	},
-
 			require('rainbow-delimiters.setup').setup({
 				strategy = {
 					[''] = 'rainbow-delimiters.strategy.global',
