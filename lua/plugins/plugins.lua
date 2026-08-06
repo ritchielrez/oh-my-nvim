@@ -109,7 +109,7 @@ local plugins = {
 			-- 	desc = 'LiFFFe grep',
 			-- },
 			{
-				'fg',
+				'fs',
 				function()
 					require('fff').live_grep({ grep = { modes = { 'fuzzy', 'plain' } } })
 				end,
