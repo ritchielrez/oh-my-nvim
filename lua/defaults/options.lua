@@ -8,10 +8,18 @@ set.relativenumber = true
 
 set.linespace = 0
 
-set.tabstop = 2
-set.softtabstop = 2
-set.shiftwidth = 2
-set.expandtab = true
+-- this ensures that no filetype plugins can override indentation settings
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = '*',
+
+	callback = function()
+		vim.opt_local.tabstop = 2
+		vim.opt_local.softtabstop = 2
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.expandtab = true
+	end,
+})
+
 set.hlsearch = false
 set.incsearch = true
 
@@ -61,7 +69,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- vim.o.shell = 'bash'
 -- vim.o.shellcmdflag = '-s'
-vim.o.guifont = 'MartianMono Nerd Font:h10'
+vim.o.guifont = 'MartianMono Nerd Font Mono:h10'
 
 vim.g.neovide_padding_top = 20
 vim.g.neovide_padding_bottom = 20
