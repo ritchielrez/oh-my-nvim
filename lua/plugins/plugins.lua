@@ -170,7 +170,7 @@ local plugins = {
 	{
 		'stevearc/overseer.nvim',
 		version = '*',
-		cmd = { 'OverseerRun', 'OverseerRerun' },
+		cmd = { 'OverseerRun', 'OverseerRerun', 'OverseerTaskAction' },
 		opt = true,
 		config = function()
 			require('plugins.overseer')

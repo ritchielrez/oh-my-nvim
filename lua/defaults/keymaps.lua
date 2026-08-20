@@ -63,3 +63,4 @@ map('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', opts)
 
 -- Task runner
 map('n', '<leader>tr', ':OverseerRerun<CR>', opts)
+map('n', '<leader>ta', ':OverseerTaskAction<CR>', opts)
