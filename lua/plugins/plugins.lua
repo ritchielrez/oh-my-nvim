@@ -181,9 +181,9 @@ local plugins = {
 
 	-- Set of languge parsers for better syntax highlighting
 	{
-		'neovim-treesitter/nvim-treesitter',
-		dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
-		branch = 'main',
+		'nvim-treesitter/nvim-treesitter',
+		branch = 'master',
+		lazy = false,
 		build = ':TSUpdate',
 		config = function()
 			require('language_support.treesitter')
