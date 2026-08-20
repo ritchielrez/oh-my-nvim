@@ -6,7 +6,11 @@ overseer.add_template_hook({
 }, function(task_defn, util)
 	-- The `util` parameter is just a namespace that exposes some useful functions
 	-- for mutating a task definition
-	util.add_component(task_defn, { 'on_output_quickfix', open = true })
+	util.add_component(task_defn, {
+		{ 'on_output_quickfix', set_diagnostics = true },
+		'on_result_diagnostics',
+		'default',
+	})
 	util.remove_component(task_defn, 'on_complete_dispose')
 end)
 
